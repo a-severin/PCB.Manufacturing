@@ -2,9 +2,11 @@
 
 namespace PCB.Manufacturing.CustomControls;
 
-public class TemplateChildNotExistsException: ApplicationException
+public class TemplateChildNotExistsException : ApplicationException
 {
-    public TemplateChildNotExistsException(string childName) : base($"Can not find template child with name {childName}")
+    public TemplateChildNotExistsException(string childName) : base(
+        $"Can not find template child with name {childName}"
+    )
     {
     }
 }

@@ -3,7 +3,7 @@
 namespace PCB.Manufacturing.UI.Order
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    ///     Interaction logic for OrderControl.xaml
     /// </summary>
     public partial class OrderControl : UserControl
     {

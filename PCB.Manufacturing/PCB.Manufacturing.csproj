@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PCB.Manufacturing.CustomControls\PCB.Manufacturing.CustomControls.csproj" />
     <ProjectReference Include="..\PCB.Manufacturing.Data\PCB.Manufacturing.Data.csproj" />
     <ProjectReference Include="..\PCB.Manufacturing.Model\PCB.Manufacturing.Model.csproj" />

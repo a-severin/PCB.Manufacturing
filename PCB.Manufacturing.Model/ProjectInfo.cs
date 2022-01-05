@@ -1,13 +1,11 @@
-﻿using System.Net.Http.Headers;
-
-namespace PCB.Manufacturing.Model;
+﻿namespace PCB.Manufacturing.Model;
 
 public class ProjectInfo
 {
-    public string ProjectName { get; set; }
-    public string Zipcode { get; set; }
     public int BoardsQuantity { get; set; }
     public LeadFree LeadFree { get; set; }
+    public string ProjectName { get; set; }
+    public string Zipcode { get; set; }
 }
 
 public struct Material
@@ -72,6 +70,6 @@ public class BoardInfo
 {
     public double BoardThickness { get; set; }
     public Material Material { get; set; }
-    public Surface Surface { get; set; }
     public SolderMaskColor SolderMaskColor { get; set; }
+    public Surface Surface { get; set; }
 }

@@ -24,6 +24,13 @@ namespace PCB.Manufacturing.Theme
             }
         }
 
+        public static object? GetResource(ThemeResourceKey resourceKey)
+        {
+            return ResourceDictionary.Contains(resourceKey.ToString())
+                ? ResourceDictionary[resourceKey.ToString()]
+                : null;
+        }
+
         public static void LoadTheme()
         {
             SetResource(
@@ -35,13 +42,6 @@ namespace PCB.Manufacturing.Theme
                 ThemeResourceKey.ExtraTimeForeground.ToString(),
                 new SolidColorBrush(Colors.DodgerBlue)
             );
-        }
-
-        public static object? GetResource(ThemeResourceKey resourceKey)
-        {
-            return ResourceDictionary.Contains(resourceKey.ToString())
-                ? ResourceDictionary[resourceKey.ToString()]
-                : null;
         }
 
         internal static void SetResource(object key, object resource)

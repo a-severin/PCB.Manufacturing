@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using PCB.Manufacturing.Model;
+﻿using PCB.Manufacturing.Model;
 
 namespace PCB.Manufacturing.Data;
 
@@ -29,7 +28,7 @@ public class Database
                 Name = "Wolfram",
                 ExtraMoney = 560,
                 ExtraTime = 7
-            },
+            }
         };
     }
 }

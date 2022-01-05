@@ -5,12 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PCB.Manufacturing"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:order="clr-namespace:PCB.Manufacturing.UI.Order"
     xmlns:preferences="clr-namespace:PCB.Manufacturing.UI.Preferences"
     xmlns:quote="clr-namespace:PCB.Manufacturing.UI.Quote"
-    xmlns:order="clr-namespace:PCB.Manufacturing.UI.Order"
     Title="MainWindow"
-    Width="800"
-    Height="450"
+    Width="1200"
+    Height="800"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>

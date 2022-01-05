@@ -4,11 +4,8 @@ using PCB.Manufacturing.Framework;
 namespace PCB.Manufacturing.Model;
 
 [TypeConverter(typeof(EnumDescriptionTypeConverter))]
-public enum IPC
+public enum ITAR
 {
-    [Description("Class 1")]
-    Class1,
-
-    [Description("Class 2")]
-    Class2
+    Yes,
+    No
 }

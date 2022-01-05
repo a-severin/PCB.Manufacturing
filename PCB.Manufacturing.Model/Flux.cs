@@ -4,11 +4,11 @@ using PCB.Manufacturing.Framework;
 namespace PCB.Manufacturing.Model;
 
 [TypeConverter(typeof(EnumDescriptionTypeConverter))]
-public enum IPC
+public enum Flux
 {
-    [Description("Class 1")]
-    Class1,
+    [Description("Clean")]
+    Clean,
 
-    [Description("Class 2")]
-    Class2
+    [Description("No Clean")]
+    NoClean
 }

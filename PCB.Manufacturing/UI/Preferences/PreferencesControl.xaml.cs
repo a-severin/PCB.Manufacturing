@@ -3,7 +3,7 @@
 namespace PCB.Manufacturing.UI.Preferences
 {
     /// <summary>
-    /// Interaction logic for PreferencesControl.xaml
+    ///     Interaction logic for PreferencesControl.xaml
     /// </summary>
     public partial class PreferencesControl : UserControl
     {

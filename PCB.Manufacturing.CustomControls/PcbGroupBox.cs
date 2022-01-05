@@ -6,6 +6,13 @@ namespace PCB.Manufacturing.CustomControls
 {
     public class PcbGroupBox : GroupBox
     {
+        public static readonly DependencyProperty SubHeaderProperty = DependencyProperty.Register(
+            nameof(SubHeader),
+            typeof(object),
+            typeof(PcbGroupBox),
+            new FrameworkPropertyMetadata(null, _onSubHeaderChanged)
+        );
+
         static PcbGroupBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -14,26 +21,20 @@ namespace PCB.Manufacturing.CustomControls
             );
         }
 
-        public static readonly DependencyProperty SubHeaderProperty = DependencyProperty.Register(
-            nameof(SubHeader),
-            typeof(object),
-            typeof(PcbGroupBox),
-            new FrameworkPropertyMetadata(null, _onSubHeaderChanged)
-        );
+        [Bindable(true)]
+        [Category("Content")]
+        [Localizability(LocalizationCategory.Label)]
+        public object SubHeader
+        {
+            get => GetValue(SubHeaderProperty);
+            set => SetValue(SubHeaderProperty, value);
+        }
 
         private static void _onSubHeaderChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var ctrl = (PcbGroupBox)d;
             ctrl.RemoveLogicalChild(e.OldValue);
             ctrl.AddLogicalChild(e.NewValue);
-        }
-
-        [Bindable(true), Category("Content")]
-        [Localizability(LocalizationCategory.Label)]
-        public object SubHeader
-        {
-            get => GetValue(SubHeaderProperty);
-            set => SetValue(SubHeaderProperty, value);
         }
     }
 }

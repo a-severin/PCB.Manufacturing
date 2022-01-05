@@ -58,25 +58,19 @@
             Grid.Row="2"
             Grid.Column="0"
             Text="ITAR" />
-        <ListBox
+        <pcb:SelectorButtons
             Grid.Row="2"
             Grid.Column="1"
-            Style="{StaticResource PreferenceSelectorListBoxStyle}">
-            <ListBoxItem Grid.Column="0">Yes</ListBoxItem>
-            <ListBoxItem Grid.Column="1">No</ListBoxItem>
-        </ListBox>
+            DataContext="{Binding Path=Itar}" />
 
         <pcb:PreferenceTitle
             Grid.Row="3"
             Grid.Column="0"
             Text="Flux Type" />
-        <ListBox
+        <pcb:SelectorButtons
             Grid.Row="3"
             Grid.Column="1"
-            Style="{StaticResource PreferenceSelectorListBoxStyle}">
-            <ListBoxItem Grid.Column="0">Clean</ListBoxItem>
-            <ListBoxItem Grid.Column="1">No Clean</ListBoxItem>
-        </ListBox>
+            DataContext="{Binding Path=FluxType}" />
 
         <pcb:PreferenceTitle
             Grid.Row="4"
@@ -107,29 +101,41 @@
             Grid.Row="7"
             Grid.Column="0"
             Text="Controlled Impedance" />
-        <ListBox
+        <pcb:SelectorButtons
             Grid.Row="7"
             Grid.Column="1"
-            Style="{StaticResource PreferenceSelectorListBoxStyle}">
-            <ListBoxItem Grid.Column="0">None</ListBoxItem>
-            <ListBoxItem Grid.Column="1">See Notes</ListBoxItem>
-        </ListBox>
+            DataContext="{Binding Path=ControlledImpedance}" />
 
 
         <pcb:PreferenceTitle
             Grid.Row="8"
             Grid.Column="0"
             Text="Tenting for Vias" />
-        <ListBox
+        <pcb:SelectorButtons
             Grid.Row="8"
             Grid.Column="1"
-            Style="{StaticResource PreferenceSelectorListBoxStyle}">
-            <ListBoxItem Grid.Column="0">Both Sides</ListBoxItem>
-            <ListBoxItem Grid.Column="1">Top Side</ListBoxItem>
-            <ListBoxItem Grid.Column="2">Bottom Side</ListBoxItem>
-            <ListBoxItem Grid.Column="3">None</ListBoxItem>
-        </ListBox>
+            DataContext="{Binding Path=TentingForVias}" />
 
+
+        <pcb:PreferenceTitle
+            Grid.Row="9"
+            Grid.Column="0"
+            Text="Stuckup" />
+        <pcb:SelectorButtons
+            Grid.Row="9"
+            Grid.Column="1"
+            DataContext="{Binding Path=Stuckup}" />
+
+        <pcb:PreferenceTitle
+            Grid.Row="10"
+            Grid.Column="0"
+            Text="Notes" />
+        <TextBox
+            Grid.Row="10"
+            Grid.Column="1"
+            Height="50"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto" />
 
     </Grid>
 </UserControl>
