@@ -7,7 +7,8 @@
         <Border
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
-            BorderThickness="{TemplateBinding BorderThickness}">
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}">
             <Grid x:Name="ButtonsGrid" />
         </Border>
     </ControlTemplate>

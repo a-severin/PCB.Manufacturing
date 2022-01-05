@@ -8,6 +8,18 @@ namespace PCB.Manufacturing.CustomControls
     [TemplatePart(Name = nameof(ButtonsGrid), Type = typeof(Grid))]
     public class SelectorButtons : Control
     {
+        public static readonly DependencyProperty CornerRadiusProperty
+            = DependencyProperty.Register(
+                nameof(CornerRadius),
+                typeof(CornerRadius),
+                typeof(SelectorButtons),
+                new FrameworkPropertyMetadata(
+                    new CornerRadius(),
+                    FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender
+                )
+            );
+
+
         static SelectorButtons()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -19,6 +31,12 @@ namespace PCB.Manufacturing.CustomControls
         public SelectorButtons()
         {
             DataContextChanged += _onDataContextChanged;
+        }
+
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         protected Grid? ButtonsGrid { get; set; }

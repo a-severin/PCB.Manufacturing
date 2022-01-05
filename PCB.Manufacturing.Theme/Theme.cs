@@ -34,6 +34,61 @@ namespace PCB.Manufacturing.Theme
         public static void LoadTheme()
         {
             SetResource(
+                ThemeResourceKey.WindowBackground,
+                new SolidColorBrush(Colors.LightSlateGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.WindowForeground,
+                new SolidColorBrush(Colors.White) { Opacity = 0.95 }
+            );
+
+            SetResource(
+                ThemeResourceKey.ContentBackground,
+                new SolidColorBrush(Colors.DarkGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.HeaderBackground,
+                new SolidColorBrush(Colors.SlateGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.TextBoxBackground,
+                new SolidColorBrush(Colors.DimGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.ComboBoxBackground,
+                new SolidColorBrush(Colors.LightGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.ButtonBackground,
+                new SolidColorBrush(Colors.SlateGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.CheckedButtonBackground,
+                new SolidColorBrush(Colors.Cyan)
+            );
+
+            SetResource(
+                ThemeResourceKey.BorderBackground,
+                new SolidColorBrush(Colors.DarkSlateGray)
+            );
+
+            SetResource(
+                ThemeResourceKey.BorderThickness,
+                new Thickness(2, 2, 2, 2)
+            );
+
+            SetResource(
+                ThemeResourceKey.CornerRadius,
+                new CornerRadius(4, 4, 4, 4)
+            );
+
+            SetResource(
                 ThemeResourceKey.ExtraMoneyForeground.ToString(),
                 new SolidColorBrush(Colors.Gold)
             );
