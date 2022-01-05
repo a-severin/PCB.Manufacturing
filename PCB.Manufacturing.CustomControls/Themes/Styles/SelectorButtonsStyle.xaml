@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customControls="clr-namespace:PCB.Manufacturing.CustomControls">
+
+    <ControlTemplate x:Key="SelectorButtonsTemplate" TargetType="{x:Type customControls:SelectorButtons}">
+        <Border
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid x:Name="ButtonsGrid" />
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type customControls:SelectorButtons}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template" Value="{StaticResource SelectorButtonsTemplate}" />
+    </Style>
+</ResourceDictionary>

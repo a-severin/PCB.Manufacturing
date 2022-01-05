@@ -5,11 +5,15 @@ VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCB.Manufacturing", "PCB.Manufacturing\PCB.Manufacturing.csproj", "{CFBCDCFF-7AAD-42AF-8E0E-C375071F94A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB.Manufacturing.CustomControls", "PCB.Manufacturing.CustomControls\PCB.Manufacturing.CustomControls.csproj", "{E1A8CB11-364E-4813-B734-E01480C16633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCB.Manufacturing.CustomControls", "PCB.Manufacturing.CustomControls\PCB.Manufacturing.CustomControls.csproj", "{E1A8CB11-364E-4813-B734-E01480C16633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB.Manufacturing.Model", "PCB.Manufacturing.Model\PCB.Manufacturing.Model.csproj", "{875B18AA-85B5-4BCA-840B-8AABBF1DAC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCB.Manufacturing.Model", "PCB.Manufacturing.Model\PCB.Manufacturing.Model.csproj", "{875B18AA-85B5-4BCA-840B-8AABBF1DAC7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB.Manufacturing.Data", "PCB.Manufacturing.Data\PCB.Manufacturing.Data.csproj", "{7055F1CA-B305-474B-A95F-F06312F21D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCB.Manufacturing.Data", "PCB.Manufacturing.Data\PCB.Manufacturing.Data.csproj", "{7055F1CA-B305-474B-A95F-F06312F21D49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCB.Manufacturing.Theme", "PCB.Manufacturing.Theme\PCB.Manufacturing.Theme.csproj", "{97F1338B-3B86-43BA-9B49-172472A32581}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB.Manufacturing.Framework", "PCB.Manufacturing.Framework\PCB.Manufacturing.Framework.csproj", "{8D221739-8DB6-4757-B9B8-B3044C92D170}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{7055F1CA-B305-474B-A95F-F06312F21D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7055F1CA-B305-474B-A95F-F06312F21D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7055F1CA-B305-474B-A95F-F06312F21D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F1338B-3B86-43BA-9B49-172472A32581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F1338B-3B86-43BA-9B49-172472A32581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F1338B-3B86-43BA-9B49-172472A32581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F1338B-3B86-43BA-9B49-172472A32581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D221739-8DB6-4757-B9B8-B3044C92D170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D221739-8DB6-4757-B9B8-B3044C92D170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D221739-8DB6-4757-B9B8-B3044C92D170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D221739-8DB6-4757-B9B8-B3044C92D170}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

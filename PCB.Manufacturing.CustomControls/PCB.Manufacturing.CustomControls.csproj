@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PCB.Manufacturing.Framework\PCB.Manufacturing.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Themes\Styles\PcbGroupBoxStyle.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

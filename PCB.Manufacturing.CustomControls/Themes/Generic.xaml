@@ -2,12 +2,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:PCB.Manufacturing.CustomControls">
-    
+
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbHeaderStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbSubHeaderStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbGroupBoxStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PreferenceTitleStyle.xaml" />
+        <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/ExtraMoneyLabelStyle.xaml" />
+        <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/ExtraTimeLabelStyle.xaml" />
+        <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/SelectorButtonsStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
 
 </ResourceDictionary>

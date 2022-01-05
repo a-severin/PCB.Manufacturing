@@ -3,15 +3,19 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:PCB.Manufacturing"
+    xmlns:pcb="http://manufacturing.pcb.com"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
     StartupUri="UI/Shell/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PCB.Manufacturing.Theme;component/Theme.xaml" />
                 <ResourceDictionary Source="/Dictionary1.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <GridLength x:Key="MoneyGrid">100</GridLength>
             <GridLength x:Key="TimeGrid">100</GridLength>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

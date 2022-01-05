@@ -11,6 +11,7 @@
     <ProjectReference Include="..\PCB.Manufacturing.CustomControls\PCB.Manufacturing.CustomControls.csproj" />
     <ProjectReference Include="..\PCB.Manufacturing.Data\PCB.Manufacturing.Data.csproj" />
     <ProjectReference Include="..\PCB.Manufacturing.Model\PCB.Manufacturing.Model.csproj" />
+    <ProjectReference Include="..\PCB.Manufacturing.Theme\PCB.Manufacturing.Theme.csproj" />
   </ItemGroup>
 
 </Project>

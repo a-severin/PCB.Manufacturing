@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PCB.Manufacturing.Framework\PCB.Manufacturing.Framework.csproj" />
-  </ItemGroup>
-
 </Project>

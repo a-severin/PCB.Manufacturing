@@ -7,6 +7,7 @@ public class ProjectInfo
     public string ProjectName { get; set; }
     public string Zipcode { get; set; }
     public int BoardsQuantity { get; set; }
+    public LeadFree LeadFree { get; set; }
 }
 
 public struct Material
