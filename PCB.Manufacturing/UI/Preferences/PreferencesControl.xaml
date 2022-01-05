@@ -2,45 +2,45 @@
     x:Class="PCB.Manufacturing.UI.Preferences.PreferencesControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:cc="clr-namespace:PCB.Manufacturing.CustomControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PCB.Manufacturing"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pcb="http://manufacturing.pcb.com"
     xmlns:preferences="clr-namespace:PCB.Manufacturing.UI.Preferences"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <StackPanel Orientation="Vertical">
 
-        <cc:PcbGroupBox>
-            <cc:PcbGroupBox.SubHeader>
-                <cc:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </cc:PcbGroupBox.SubHeader>
-            <cc:PcbGroupBox.Header>
-                <cc:PcbHeader Text="Project Basics" />
-            </cc:PcbGroupBox.Header>
+        <pcb:PcbGroupBox>
+            <pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+            </pcb:PcbGroupBox.SubHeader>
+            <pcb:PcbGroupBox.Header>
+                <pcb:PcbHeader Text="Project Basics" />
+            </pcb:PcbGroupBox.Header>
             <preferences:ProjectBasicsControl />
-        </cc:PcbGroupBox>
+        </pcb:PcbGroupBox>
 
-        <cc:PcbGroupBox>
-            <cc:PcbGroupBox.SubHeader>
-                <cc:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </cc:PcbGroupBox.SubHeader>
-            <cc:PcbGroupBox.Header>
-                <cc:PcbHeader Text="Important Board Preferences" />
-            </cc:PcbGroupBox.Header>
+        <pcb:PcbGroupBox>
+            <pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+            </pcb:PcbGroupBox.SubHeader>
+            <pcb:PcbGroupBox.Header>
+                <pcb:PcbHeader Text="Important Board Preferences" />
+            </pcb:PcbGroupBox.Header>
             <preferences:ImportantBoardPreferencesControl />
-        </cc:PcbGroupBox>
+        </pcb:PcbGroupBox>
 
-        <cc:PcbGroupBox>
-            <cc:PcbGroupBox.SubHeader>
-                <cc:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </cc:PcbGroupBox.SubHeader>
-            <cc:PcbGroupBox.Header>
-                <cc:PcbHeader Text="Special Board Preferences" />
-            </cc:PcbGroupBox.Header>
+        <pcb:PcbGroupBox>
+            <pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+            </pcb:PcbGroupBox.SubHeader>
+            <pcb:PcbGroupBox.Header>
+                <pcb:PcbHeader Text="Special Board Preferences" />
+            </pcb:PcbGroupBox.Header>
             <preferences:SpecialBoardPreferencesControl />
-        </cc:PcbGroupBox>
+        </pcb:PcbGroupBox>
 
     </StackPanel>
 </UserControl>

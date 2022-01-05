@@ -7,4 +7,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PCB.Manufacturing.CustomControls\PCB.Manufacturing.CustomControls.csproj" />
+    <ProjectReference Include="..\PCB.Manufacturing.Data\PCB.Manufacturing.Data.csproj" />
+    <ProjectReference Include="..\PCB.Manufacturing.Model\PCB.Manufacturing.Model.csproj" />
+  </ItemGroup>
+
 </Project>
