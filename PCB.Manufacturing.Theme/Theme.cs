@@ -33,75 +33,75 @@ namespace PCB.Manufacturing.Theme
 
         public static void LoadTheme()
         {
-            SetResource(
+            _set(
                 ThemeResourceKey.WindowBackground,
                 new SolidColorBrush(Colors.LightSlateGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.WindowForeground,
                 new SolidColorBrush(Colors.White) { Opacity = 0.95 }
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.ContentBackground,
                 new SolidColorBrush(Colors.DarkGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.HeaderBackground,
                 new SolidColorBrush(Colors.SlateGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.TextBoxBackground,
                 new SolidColorBrush(Colors.DimGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.ComboBoxBackground,
                 new SolidColorBrush(Colors.LightGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.ButtonBackground,
                 new SolidColorBrush(Colors.SlateGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.CheckedButtonBackground,
                 new SolidColorBrush(Colors.Cyan)
             );
 
-            SetResource(
-                ThemeResourceKey.BorderBackground,
+            _set(
+                ThemeResourceKey.BorderBrush,
                 new SolidColorBrush(Colors.DarkSlateGray)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.BorderThickness,
                 new Thickness(2, 2, 2, 2)
             );
 
-            SetResource(
+            _set(
                 ThemeResourceKey.CornerRadius,
                 new CornerRadius(4, 4, 4, 4)
             );
 
-            SetResource(
-                ThemeResourceKey.ExtraMoneyForeground.ToString(),
+            _set(
+                ThemeResourceKey.ExtraMoneyForeground,
                 new SolidColorBrush(Colors.Gold)
             );
 
-            SetResource(
-                ThemeResourceKey.ExtraTimeForeground.ToString(),
+            _set(
+                ThemeResourceKey.ExtraTimeForeground,
                 new SolidColorBrush(Colors.DodgerBlue)
             );
         }
 
-        internal static void SetResource(object key, object resource)
+        private static void _set(ThemeResourceKey key, object resource)
         {
-            ResourceDictionary[key] = resource;
+            ResourceDictionary[key.ToString()] = resource;
         }
     }
 }

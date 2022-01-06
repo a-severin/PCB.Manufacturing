@@ -4,17 +4,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:PCB.Manufacturing"
     xmlns:pcb="http://manufacturing.pcb.com"
-    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
-    StartupUri="UI/Shell/MainWindow.xaml">
+    xmlns:shell="clr-namespace:PCB.Manufacturing.UI.Shell"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/PCB.Manufacturing.Theme;component/Theme.xaml" />
+                <ResourceDictionary Source="/Images.xaml" />
                 <ResourceDictionary Source="/Dictionary1.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <GridLength x:Key="MoneyGrid">100</GridLength>
             <GridLength x:Key="TimeGrid">100</GridLength>
+
+            <Style BasedOn="{StaticResource {x:Type pcb:PcbWindow}}" TargetType="shell:MainWindow" />
 
         </ResourceDictionary>
     </Application.Resources>

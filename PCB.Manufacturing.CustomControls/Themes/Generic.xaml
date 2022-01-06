@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:PCB.Manufacturing.CustomControls">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbWindowStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbHeaderStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbSubHeaderStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/PcbGroupBoxStyle.xaml" />
@@ -12,6 +13,5 @@
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/ExtraTimeLabelStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/SelectorButtonsStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
 
 </ResourceDictionary>

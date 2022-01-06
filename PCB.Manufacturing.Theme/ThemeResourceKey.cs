@@ -15,7 +15,7 @@ public enum ThemeResourceKey
     ButtonBackground,
     CheckedButtonBackground,
 
-    BorderBackground,
+    BorderBrush,
     BorderThickness,
     CornerRadius,
 

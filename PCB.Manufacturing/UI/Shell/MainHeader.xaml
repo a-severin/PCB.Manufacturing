@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="PCB.Manufacturing.UI.Shell.MainHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PCB.Manufacturing.UI.Shell"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pcb="http://manufacturing.pcb.com"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
+    mc:Ignorable="d">
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Border
+            Grid.Column="0"
+            Padding="8"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{theme:ThemeResource ResourceKey=ContentBackground}"
+            CornerRadius="{theme:ThemeResource ResourceKey=CornerRadius}">
+            <Image
+                Width="48"
+                Height="48"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Source="{StaticResource AppIcon}" />
+        </Border>
+
+        <pcb:PcbHeader
+            Grid.Column="1"
+            Margin="8,0,0,8"
+            VerticalAlignment="Top"
+            Text="Tempo Automation" />
+
+        <pcb:PcbSubHeader
+            Grid.Column="1"
+            Margin="8,0,0,8"
+            VerticalAlignment="Bottom">
+            <Run Text="Describe your design and receive real-time design feedback for manufacturing and" />
+            <LineBreak />
+            <Run Text="component sourcing. If you update your design, we will provide an update quote." />
+        </pcb:PcbSubHeader>
+
+        <StackPanel
+            Grid.Column="2"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+            <Button Margin="0,0,16,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource ShoppingCartIcon}" />
+                    <TextBlock Text="Place an Order" />
+                </StackPanel>
+            </Button>
+            <Button>
+                <Image Source="{StaticResource RefreshIcon}" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

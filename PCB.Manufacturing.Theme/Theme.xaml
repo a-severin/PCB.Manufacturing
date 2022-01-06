@@ -8,6 +8,36 @@
         <t:ThemeResourceDictionary />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:PcbHeader}}" TargetType="pcb:PcbHeader">
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:PcbSubHeader}}" TargetType="pcb:PcbSubHeader">
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:PreferenceTitle}}" TargetType="pcb:PreferenceTitle">
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:PcbWindow}}" TargetType="pcb:PcbWindow">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=WindowBackground}" />
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
+        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:SelectorButtons}}" TargetType="pcb:SelectorButtons">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ContentBackground}" />
+        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
+        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+        <Setter Property="CornerRadius" Value="{t:ThemeResource ResourceKey=CornerRadius}" />
+    </Style>
+
     <Style BasedOn="{StaticResource {x:Type pcb:ExtraMoneyLabel}}" TargetType="pcb:ExtraMoneyLabel">
         <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=ExtraMoneyForeground}" />
     </Style>
