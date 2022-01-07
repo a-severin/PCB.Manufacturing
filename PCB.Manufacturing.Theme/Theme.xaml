@@ -7,6 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <t:ThemeResourceDictionary />
         <ResourceDictionary Source="Button.xaml" />
+        <ResourceDictionary Source="TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
@@ -51,4 +52,5 @@
     <Style BasedOn="{StaticResource {x:Type pcb:ExtraTimeLabel}}" TargetType="pcb:ExtraTimeLabel">
         <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=ExtraTimeForeground}" />
     </Style>
+
 </ResourceDictionary>

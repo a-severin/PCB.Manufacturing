@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:t="clr-namespace:PCB.Manufacturing.Theme">
+    <ControlTemplate x:Key="TextBoxTemplate" TargetType="{x:Type TextBoxBase}">
+        <Border
+            x:Name="border"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{t:ThemeResource ResourceKey=CornerRadius}"
+            SnapsToDevicePixels="True">
+            <ScrollViewer
+                x:Name="PART_ContentHost"
+                Focusable="false"
+                HorizontalScrollBarVisibility="Hidden"
+                VerticalScrollBarVisibility="Hidden" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="border" Property="Opacity" Value="0.56" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=TextBoxBackground}" />
+        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
+        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+        <Setter Property="Template" Value="{StaticResource TextBoxTemplate}" />
+    </Style>
+
+</ResourceDictionary>

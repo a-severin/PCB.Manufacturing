@@ -52,8 +52,6 @@
             VerticalAlignment="Top"
             Orientation="Horizontal">
 
-            <pcb:SelectorButton Content="Test" />
-
             <Button Margin="0,0,16,0">
                 <StackPanel Orientation="Horizontal">
                     <Image
@@ -62,6 +60,7 @@
                     <TextBlock Text="Place an Order" />
                 </StackPanel>
             </Button>
+
             <Button>
                 <Image Source="{StaticResource RefreshIcon}" />
             </Button>
