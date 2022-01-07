@@ -75,12 +75,31 @@ namespace PCB.Manufacturing.CustomControls
                     }
                 );
 
-                var button = new RadioButton
+                var button = new SelectorButton()
                 {
                     Content = converter.ConvertTo(value, typeof(string)),
                     IsChecked = value?.Equals(DataContext),
                     DataContext = value
                 };
+
+                if (i == 0)
+                {
+                    button.CornerRadius = new CornerRadius(
+                        CornerRadius.TopLeft,
+                        0,
+                        0,
+                        CornerRadius.BottomLeft
+                    );
+                }
+                else if (i == values.Length - 1)
+                {
+                    button.CornerRadius = new CornerRadius(
+                        0,
+                        CornerRadius.TopRight,
+                        CornerRadius.BottomRight,
+                        0
+                    );
+                }
 
                 button.SetValue(Grid.ColumnProperty, i);
                 button.Checked += _onChecked;
@@ -91,7 +110,7 @@ namespace PCB.Manufacturing.CustomControls
 
         private void _onChecked(object sender, RoutedEventArgs e)
         {
-            if (sender is RadioButton button)
+            if (sender is SelectorButton button)
             {
                 DataContext = button.DataContext;
             }

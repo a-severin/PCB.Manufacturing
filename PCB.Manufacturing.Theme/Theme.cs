@@ -70,7 +70,7 @@ namespace PCB.Manufacturing.Theme
 
             _set(
                 ThemeResourceKey.CheckedButtonBackground,
-                new SolidColorBrush(Colors.Cyan)
+                new SolidColorBrush(Colors.DodgerBlue)
             );
 
             _set(
@@ -95,7 +95,7 @@ namespace PCB.Manufacturing.Theme
 
             _set(
                 ThemeResourceKey.ExtraTimeForeground,
-                new SolidColorBrush(Colors.DodgerBlue)
+                new SolidColorBrush(Colors.RoyalBlue)
             );
         }
 

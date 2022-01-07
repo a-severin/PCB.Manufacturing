@@ -51,9 +51,14 @@
             Grid.Column="2"
             VerticalAlignment="Top"
             Orientation="Horizontal">
+
+            <pcb:SelectorButton Content="Test" />
+
             <Button Margin="0,0,16,0">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{StaticResource ShoppingCartIcon}" />
+                    <Image
+                        Margin="0,0,4,0"
+                        Source="{StaticResource ShoppingCartIcon}" />
                     <TextBlock Text="Place an Order" />
                 </StackPanel>
             </Button>

@@ -6,6 +6,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <t:ThemeResourceDictionary />
+        <ResourceDictionary Source="Button.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
@@ -36,6 +37,11 @@
         <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
         <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
         <Setter Property="CornerRadius" Value="{t:ThemeResource ResourceKey=CornerRadius}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:SelectorButton}}" TargetType="pcb:SelectorButton">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ButtonBackground}" />
+        <Setter Property="CheckedBackground" Value="{t:ThemeResource ResourceKey=CheckedButtonBackground}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:ExtraMoneyLabel}}" TargetType="pcb:ExtraMoneyLabel">
