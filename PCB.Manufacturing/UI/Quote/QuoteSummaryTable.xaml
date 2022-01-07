@@ -1,0 +1,77 @@
+﻿<UserControl
+    x:Class="PCB.Manufacturing.UI.Quote.QuoteSummaryTable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:quote="clr-namespace:PCB.Manufacturing.UI.Quote"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <quote:QuoteSummaryTableViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <DataGrid
+            AutoGenerateColumns="False"
+            Background="{theme:ThemeResource ResourceKey=ContentBackground}"
+            Foreground="{theme:ThemeResource ResourceKey=WindowForeground}"
+            HeadersVisibility="Column"
+            IsReadOnly="True"
+            ItemsSource="{Binding Path=SummaryPreferenceCollection}">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander
+                                            Background="{theme:ThemeResource ResourceKey=HeaderBackground}"
+                                            BorderBrush="#FF002255"
+                                            BorderThickness="1,1,1,5"
+                                            Foreground="{theme:ThemeResource ResourceKey=WindowForeground}"
+                                            IsExpanded="True">
+                                            <Expander.Header>
+                                                <TextBlock
+                                                    Width="100"
+                                                    Margin="5,0,0,0"
+                                                    FontWeight="Bold"
+                                                    Foreground="Black"
+                                                    Text="{Binding Path=Name}" />
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <ItemsPresenter />
+                                            </Expander.Content>
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    d:DataContext="{d:DesignInstance Type=quote:SummaryPreferencePresenter}"
+                    Binding="{Binding Path=Parameter}"
+                    Header="Parameter" />
+                <DataGridTextColumn
+                    Width="*"
+                    d:DataContext="{d:DesignInstance Type=quote:SummaryPreferencePresenter}"
+                    Binding="{Binding Path=Value}"
+                    Header="Value" />
+                <DataGridTextColumn
+                    d:DataContext="{d:DesignInstance Type=quote:SummaryPreferencePresenter}"
+                    Binding="{Binding Path=TimeImpact}"
+                    Header="Time Impact" />
+                <DataGridTextColumn
+                    d:DataContext="{d:DesignInstance Type=quote:SummaryPreferencePresenter}"
+                    Binding="{Binding Path=CostImpact}"
+                    Header="Cost Impact" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
