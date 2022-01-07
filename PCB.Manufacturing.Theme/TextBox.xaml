@@ -27,7 +27,10 @@
         <Setter Property="Background" Value="{t:ThemeResource ResourceKey=TextBoxBackground}" />
         <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
         <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+        <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
         <Setter Property="Template" Value="{StaticResource TextBoxTemplate}" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Padding" Value="2" />
     </Style>
 
 </ResourceDictionary>

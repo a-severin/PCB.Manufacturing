@@ -35,7 +35,7 @@ namespace PCB.Manufacturing.Theme
         {
             _set(
                 ThemeResourceKey.WindowBackground,
-                new SolidColorBrush(Colors.LightSlateGray)
+                new SolidColorBrush(Color.FromRgb(79,79,79))
             );
 
             _set(
@@ -45,27 +45,27 @@ namespace PCB.Manufacturing.Theme
 
             _set(
                 ThemeResourceKey.ContentBackground,
-                new SolidColorBrush(Colors.DarkGray)
+                new SolidColorBrush(Color.FromRgb(65,65,65))
             );
 
             _set(
                 ThemeResourceKey.HeaderBackground,
-                new SolidColorBrush(Colors.SlateGray)
+                new SolidColorBrush(Color.FromRgb(78,78,78))
             );
 
             _set(
                 ThemeResourceKey.TextBoxBackground,
-                new SolidColorBrush(Colors.DimGray)
+                new SolidColorBrush(Color.FromRgb(47,47,47))
             );
 
             _set(
                 ThemeResourceKey.ComboBoxBackground,
-                new SolidColorBrush(Colors.LightGray)
+                new SolidColorBrush(Color.FromRgb(93,93,93))
             );
 
             _set(
                 ThemeResourceKey.ButtonBackground,
-                new SolidColorBrush(Colors.SlateGray)
+                new SolidColorBrush(Color.FromRgb(84,84,84))
             );
 
             _set(
@@ -75,7 +75,7 @@ namespace PCB.Manufacturing.Theme
 
             _set(
                 ThemeResourceKey.BorderBrush,
-                new SolidColorBrush(Colors.DarkSlateGray)
+                new SolidColorBrush(Color.FromRgb(45,45,45))
             );
 
             _set(

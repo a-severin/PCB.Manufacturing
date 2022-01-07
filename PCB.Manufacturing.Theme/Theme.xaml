@@ -24,6 +24,8 @@
 
     <Style BasedOn="{StaticResource {x:Type pcb:PreferenceTitle}}" TargetType="pcb:PreferenceTitle">
         <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=WindowForeground}" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="4" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:PcbWindow}}" TargetType="pcb:PcbWindow">
@@ -34,23 +36,42 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:SelectorButtons}}" TargetType="pcb:SelectorButtons">
-        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ContentBackground}" />
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ButtonBackground}" />
         <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
         <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
         <Setter Property="CornerRadius" Value="{t:ThemeResource ResourceKey=CornerRadius}" />
+        <Setter Property="Margin" Value="2" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:SelectorButton}}" TargetType="pcb:SelectorButton">
         <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ButtonBackground}" />
         <Setter Property="CheckedBackground" Value="{t:ThemeResource ResourceKey=CheckedButtonBackground}" />
+        <Setter Property="Padding" Value="4,2" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:ExtraMoneyLabel}}" TargetType="pcb:ExtraMoneyLabel">
         <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=ExtraMoneyForeground}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type pcb:ExtraTimeLabel}}" TargetType="pcb:ExtraTimeLabel">
         <Setter Property="Foreground" Value="{t:ThemeResource ResourceKey=ExtraTimeForeground}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type pcb:PcbGroupBox}}" TargetType="pcb:PcbGroupBox">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ContentBackground}" />
+        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
+        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+        <Setter Property="Margin" Value="0,2" />
+        <Setter Property="Padding" Value="4" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox">
+        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ComboBoxBackground}" />
+        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
+        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
+        <Setter Property="Margin" Value="2" />
     </Style>
 
 </ResourceDictionary>

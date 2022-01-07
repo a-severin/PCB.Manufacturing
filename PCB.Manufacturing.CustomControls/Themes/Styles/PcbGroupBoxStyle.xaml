@@ -18,6 +18,7 @@
 
                 <StackPanel
                     Grid.Column="0"
+                    Margin="{TemplateBinding Padding}"
                     Orientation="Vertical">
                     <ContentPresenter
                         ContentSource="Header"
@@ -38,8 +39,6 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type customControls:PcbGroupBox}">
-        <Setter Property="BorderBrush" Value="Gray" />
-        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template" Value="{StaticResource PcbGroupBoxTemplate}" />
     </Style>
 
