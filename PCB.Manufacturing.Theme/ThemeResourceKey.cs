@@ -20,5 +20,9 @@ public enum ThemeResourceKey
     CornerRadius,
 
     ExtraMoneyForeground,
-    ExtraTimeForeground
+    ExtraTimeForeground,
+
+    DataGridHeaderBackground,
+    DataGridCellBackground,
+    DataGridGroupingBackground
 }

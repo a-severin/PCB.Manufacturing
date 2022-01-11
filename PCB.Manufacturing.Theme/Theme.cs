@@ -97,6 +97,22 @@ namespace PCB.Manufacturing.Theme
                 ThemeResourceKey.ExtraTimeForeground,
                 new SolidColorBrush(Colors.RoyalBlue)
             );
+            
+
+            _set(
+                ThemeResourceKey.DataGridHeaderBackground,
+                new SolidColorBrush(Color.FromRgb(73,73,73))
+            );
+
+            _set(
+                ThemeResourceKey.DataGridCellBackground,
+                new SolidColorBrush(Color.FromRgb(60,60,60))
+            );
+            
+            _set(
+                ThemeResourceKey.DataGridGroupingBackground,
+                new SolidColorBrush(Color.FromRgb(53,53,53))
+            );
         }
 
         private static void _set(ThemeResourceKey key, object resource)
