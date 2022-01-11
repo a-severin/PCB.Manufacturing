@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
@@ -21,7 +22,7 @@ public class GroupSumCostImpactConverter: MarkupExtension, IValueConverter
         CultureInfo culture
     )
     {
-        if (value is ReadOnlyObservableCollection<object> collection)
+        if (value is IEnumerable collection)
         {
             return collection.OfType<SummaryPreferencePresenter>()
                 .Select(_ => _.CostImpact)

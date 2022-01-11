@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:quote="clr-namespace:PCB.Manufacturing.UI.Quote"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -24,7 +25,13 @@
     </UserControl.DataContext>
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
         <DataGrid
+            Grid.Row="0"
             AutoGenerateColumns="False"
             HorizontalScrollBarVisibility="Hidden"
             IsReadOnly="True"
@@ -109,5 +116,41 @@
                 </GroupStyle>
             </DataGrid.GroupStyle>
         </DataGrid>
+
+        <Border
+            Grid.Row="1"
+            Background="{theme:ThemeResource ResourceKey=DataGridHeaderBackground}"
+            BorderBrush="{theme:ThemeResource ResourceKey=BorderBrush}"
+            BorderThickness="{theme:ThemeResource ResourceKey=BorderThickness}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding ElementName=ParameterGridColumn, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=ValueGridColumn, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=TimeImpactGridColumn, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=CostImpactGridColumn, Path=ActualWidth}" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="8,2"
+                    FontWeight="DemiBold"
+                    Text="Running Total" />
+
+                <TextBlock
+                    Grid.Column="2"
+                    Margin="8,2"
+                    HorizontalAlignment="Right"
+                    FontWeight="DemiBold"
+                    Text="{Binding Path=SummaryPreferenceCollection, Converter={quote:GroupSumTimeImpactConverter}}" />
+
+                <TextBlock
+                    Grid.Column="3"
+                    Margin="8,2"
+                    HorizontalAlignment="Right"
+                    FontWeight="DemiBold"
+                    Text="{Binding Path=SummaryPreferenceCollection, Converter={quote:GroupSumCostImpactConverter}}" />
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
