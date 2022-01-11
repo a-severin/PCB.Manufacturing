@@ -12,7 +12,6 @@
                             Background="Transparent"
                             SnapsToDevicePixels="False">
 
-
                             <Path
                                 x:Name="arrow"
                                 Grid.Column="0"
@@ -30,6 +29,7 @@
                                 VerticalAlignment="Center"
                                 RecognizesAccessKey="True"
                                 SnapsToDevicePixels="True" />
+
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
