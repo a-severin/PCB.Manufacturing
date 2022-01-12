@@ -75,4 +75,54 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
+
+    <DrawingImage x:Key="CostImpactIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <DrawingGroup>
+                        <DrawingGroup.Children>
+                            <GeometryDrawing
+                                Brush="White"
+                                Pen="{x:Null}">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry
+                                        Figures="M12,0C5.4,0 0,5.4 0,12 0,18.6 5.4,24 12,24 18.6,24 24,18.6 24,12 24,5.4 18.6,0 12,0z M12,2C17.5,2 22,6.5 22,12 22,17.5 17.5,22 12,22 6.5,22 2,17.5 2,12 2,6.5 6.5,2 12,2z M11.800781,4L11.800781,5.8007812C10.700781,5.9007812 9.8992187,6.3003906 9.1992188,6.9003906 8.4992188,7.6003906 8.1992188,8.3007812 8.1992188,9.3007812 8.1992187,10.300781 8.4996094,11.099219 9.0996094,11.699219 9.6996094,12.199219 10.7,12.699219 12,13.199219 12.6,13.399219 12.999219,13.700391 13.199219,13.900391 13.399219,14.100391 13.5,14.500391 13.5,14.900391 13.5,15.300391 13.399219,15.600781 13.199219,15.800781 12.999219,16.000781 12.699219,16.099609 12.199219,16.099609 11.599219,16.099609 11.200391,15.999219 10.900391,15.699219 10.600391,15.399219 10.400391,14.900781 10.400391,14.300781L7.5996094,14.300781 7.5996094,14.400391C7.5996094,15.700391 7.9992187,16.599219 8.6992188,17.199219 9.3992188,17.799219 10.4,18.200781 11.5,18.300781L11.5,20 12.800781,20 12.800781,18.400391C13.900781,18.300391 14.800391,18.000391 15.400391,17.400391 16.000391,16.800391 16.300781,16 16.300781,15 16.300781,13.9 15.900781,13.1 15.300781,12.5 14.700781,11.9 13.700391,11.4 12.400391,11 11.800391,10.7 11.399219,10.399219 11.199219,10.199219 10.999219,9.9992187 10.900391,9.7007813 10.900391,9.3007812 10.900391,8.9007812 10.999219,8.6007813 11.199219,8.3007812 11.399219,8.0007813 11.699219,7.9003906 12.199219,7.9003906 12.599219,7.9003906 12.899219,8.1007813 13.199219,8.3007812 13.499219,8.5007812 13.599609,8.9 13.599609,9.5L16.400391,9.5C16.400391,8.5 16.1,7.7 15.5,7 14.9,6.3 14,5.9007812 13,5.8007812L13,4 11.800781,4z"
+                                        FillRule="Nonzero" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup.Children>
+                        <DrawingGroup.ClipGeometry>
+                            <RectangleGeometry Rect="0,0,24,24" />
+                        </DrawingGroup.ClipGeometry>
+                    </DrawingGroup>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="TimeImpactIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <DrawingGroup>
+                        <DrawingGroup.Children>
+                            <GeometryDrawing
+                                Brush="White"
+                                Pen="{x:Null}">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry
+                                        Figures="M12,2C6.4889971,2 2,6.4889971 2,12 2,17.511003 6.4889971,22 12,22 17.511003,22 22,17.511003 22,12 22,6.4889971 17.511003,2 12,2z M12,4C16.430123,4 20,7.5698774 20,12 20,16.430123 16.430123,20 12,20 7.5698774,20 4,16.430123 4,12 4,7.5698774 7.5698774,4 12,4z M11,6L11,12.414062 15.292969,16.707031 16.707031,15.292969 13,11.585938 13,6 11,6z"
+                                        FillRule="Nonzero" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup.Children>
+                        <DrawingGroup.ClipGeometry>
+                            <RectangleGeometry Rect="0,0,24,24" />
+                        </DrawingGroup.ClipGeometry>
+                    </DrawingGroup>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
 </ResourceDictionary>

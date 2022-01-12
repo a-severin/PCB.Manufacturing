@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
@@ -8,13 +7,8 @@ using System.Windows.Markup;
 
 namespace PCB.Manufacturing.UI.Quote;
 
-public class GroupSumCostImpactConverter: MarkupExtension, IValueConverter
+public class SumTimeImpactConverter : MarkupExtension, IValueConverter
 {
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-        return this;
-    }
-
     public object Convert(
         object value,
         Type targetType,
@@ -24,10 +18,11 @@ public class GroupSumCostImpactConverter: MarkupExtension, IValueConverter
     {
         if (value is IEnumerable collection)
         {
-            return collection.OfType<SummaryPreferencePresenter>()
-                .Select(_ => _.CostImpact)
-                .Sum()
-                .ToString("C");
+            var sum = collection.OfType<SummaryPreferencePresenter>()
+                .Select(_ => _.TimeImpact ?? 0)
+                .Sum();
+
+            return TimeImpactConverter.Represent(sum);
         }
 
         return "-";
@@ -41,5 +36,10 @@ public class GroupSumCostImpactConverter: MarkupExtension, IValueConverter
     )
     {
         throw new NotImplementedException();
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Data;
 using Prism.Mvvm;
 
@@ -39,7 +40,7 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
             {
                 Parameter = "Packages",
                 Value = "Package on Packages",
-                TimeImpact = 1,
+                TimeImpact = 2,
                 CostImpact = 2_500,
                 Category = "Assembly"
             }
@@ -61,7 +62,7 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Microchip 20SU",
                 Value = "2",
                 TimeImpact = null,
-                CostImpact = 48,
+                CostImpact = 480,
                 Category = "Components"
             }
         );
@@ -71,14 +72,16 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Microchip 18PC",
                 Value = "1",
                 TimeImpact = null,
-                CostImpact = 22,
+                CostImpact = 220,
                 Category = "Components"
             }
         );
 
-        var collectionView = CollectionViewSource.GetDefaultView(this);
-        collectionView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(SummaryPreferencePresenter.Category)));
+        CollectionView = CollectionViewSource.GetDefaultView(this);
+        CollectionView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(SummaryPreferencePresenter.Category)));
     }
+
+    public ICollectionView CollectionView { get; set; }
 }
 
 public class SummaryPreferencePresenter : BindableBase

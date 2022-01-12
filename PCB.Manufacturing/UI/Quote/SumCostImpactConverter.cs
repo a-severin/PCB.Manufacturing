@@ -8,7 +8,7 @@ using System.Windows.Markup;
 
 namespace PCB.Manufacturing.UI.Quote;
 
-public class GroupSumTimeImpactConverter: MarkupExtension, IValueConverter
+public class SumCostImpactConverter: MarkupExtension, IValueConverter
 {
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
@@ -24,11 +24,10 @@ public class GroupSumTimeImpactConverter: MarkupExtension, IValueConverter
     {
         if (value is IEnumerable collection)
         {
-            var sum = collection.OfType<SummaryPreferencePresenter>()
-                .Select(_ => _.TimeImpact ?? 0)
-                .Sum();
-
-            return TimeImpactConverter.Represent(sum);
+            return collection.OfType<SummaryPreferencePresenter>()
+                .Select(_ => _.CostImpact)
+                .Sum()
+                .ToString("C");
         }
 
         return "-";

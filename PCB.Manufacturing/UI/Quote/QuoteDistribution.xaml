@@ -5,11 +5,211 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PCB.Manufacturing.UI.Quote"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pcb="http://manufacturing.pcb.com"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
     <UserControl.DataContext>
-        QuoteSummaryTableViewModel
+        <local:QuoteSummaryTableViewModel />
     </UserControl.DataContext>
-    <Grid />
+    <StackPanel Orientation="Vertical">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <pcb:PcbHeader
+                Grid.Row="0"
+                HorizontalAlignment="Left"
+                FontSize="16"
+                Text="Manufactoring" />
+
+            <StackPanel
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <ToggleButton
+                    x:Name="ShowTimeImpact"
+                    IsChecked="True">
+                    <Image
+                        Width="16"
+                        Height="16"
+                        Source="{StaticResource TimeImpactIcon}" />
+                </ToggleButton>
+                <ToggleButton
+                    x:Name="ShowCostImpact"
+                    IsChecked="True">
+                    <Image
+                        Width="16"
+                        Height="16"
+                        Source="{StaticResource CostImpactIcon}" />
+                </ToggleButton>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel
+            Orientation="Vertical"
+            Visibility="{Binding ElementName=ShowTimeImpact, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="{Binding Path=SummaryPreferenceCollection, Converter={local:SumTimeImpactConverter}}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactToGridLengthConverter GroupIndex=0}}" />
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactToGridLengthConverter GroupIndex=1}}" />
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactToGridLengthConverter GroupIndex=2}}" />
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    Grid.Column="0"
+                    Height="8"
+                    Background="CornflowerBlue"
+                    CornerRadius="4,0,0,4" />
+
+                <Border
+                    Grid.Column="1"
+                    Height="8"
+                    Background="LawnGreen"
+                    CornerRadius="0" />
+
+                <Border
+                    Grid.Column="2"
+                    Height="8"
+                    Background="Gold"
+                    CornerRadius="0,4,4,0" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock Foreground="CornflowerBlue">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactConverter GroupIndex=0}, Mode=OneWay}" />
+                    </TextBlock>
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Items, Converter={local:SumTimeImpactConverter}}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock Foreground="LawnGreen">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactConverter GroupIndex=1}, Mode=OneWay}" />
+                    </TextBlock>
+
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Items, Converter={local:SumTimeImpactConverter}}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Column="2"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Foreground="Gold">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentTimeImpactConverter GroupIndex=2}, Mode=OneWay}" />
+                    </TextBlock>
+
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Items, Converter={local:SumTimeImpactConverter}}" />
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel
+            Orientation="Vertical"
+            Visibility="{Binding ElementName=ShowCostImpact, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="{Binding Path=SummaryPreferenceCollection, Converter={local:SumCostImpactConverter}}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=0}}" />
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=1}}" />
+                    <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=2}}" />
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    Grid.Column="0"
+                    Height="8"
+                    Background="CornflowerBlue"
+                    CornerRadius="4,0,0,4" />
+
+                <Border
+                    Grid.Column="1"
+                    Height="8"
+                    Background="LawnGreen"
+                    CornerRadius="0" />
+
+                <Border
+                    Grid.Column="2"
+                    Height="8"
+                    Background="Gold"
+                    CornerRadius="0,4,4,0" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock Foreground="CornflowerBlue">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=0}, Mode=OneWay}" />
+                    </TextBlock>
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Items, Converter={local:SumCostImpactConverter}}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock Foreground="LawnGreen">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=1}, Mode=OneWay}" />
+                    </TextBlock>
+
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Items, Converter={local:SumCostImpactConverter}}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Column="2"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Foreground="Gold">
+                        <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Name, Mode=OneWay}" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=2}, Mode=OneWay}" />
+                    </TextBlock>
+
+                    <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Items, Converter={local:SumCostImpactConverter}}" />
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+    </StackPanel>
 </UserControl>
