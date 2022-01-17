@@ -1,0 +1,91 @@
+﻿<UserControl
+    x:Class="PCB.Manufacturing.UI.Quote.CostImpactDiagramControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PCB.Manufacturing.UI.Quote"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance Type=local:QuoteSummaryTableViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel
+        Orientation="Vertical"
+        >
+        <TextBlock Text="{Binding Path=SummaryPreferenceCollection, Converter={local:SumCostImpactConverter}}" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=0}}" />
+                <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=1}}" />
+                <ColumnDefinition Width="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactToGridLengthConverter GroupIndex=2}}" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Column="0"
+                Height="8"
+                Background="{StaticResource FabricationBrush}"
+                CornerRadius="4,0,0,4" />
+
+            <Border
+                Grid.Column="1"
+                Height="8"
+                Background="{StaticResource AssemblyBrush}"
+                CornerRadius="0" />
+
+            <Border
+                Grid.Column="2"
+                Height="8"
+                Background="{StaticResource ComponentsBrush}"
+                CornerRadius="0,4,4,0" />
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                Orientation="Vertical">
+                <TextBlock Foreground="{StaticResource FabricationBrush}">
+                    <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Name, Mode=OneWay}" />
+                    <Run Text=" - " />
+                    <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=0}, Mode=OneWay}" />
+                </TextBlock>
+                <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[0].Items, Converter={local:SumCostImpactConverter}}" />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Orientation="Vertical">
+                <TextBlock Foreground="{StaticResource AssemblyBrush}">
+                    <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Name, Mode=OneWay}" />
+                    <Run Text=" - " />
+                    <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=1}, Mode=OneWay}" />
+                </TextBlock>
+
+                <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[1].Items, Converter={local:SumCostImpactConverter}}" />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Column="2"
+                HorizontalAlignment="Left"
+                Orientation="Vertical">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Foreground="{StaticResource ComponentsBrush}">
+                    <Run Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Name, Mode=OneWay}" />
+                    <Run Text=" - " />
+                    <Run Text="{Binding Path=SummaryPreferenceCollection, Converter={local:PercentCostImpactConverter GroupIndex=2}, Mode=OneWay}" />
+                </TextBlock>
+
+                <TextBlock Text="{Binding Path=SummaryPreferenceCollection.CollectionView.Groups[2].Items, Converter={local:SumCostImpactConverter}}" />
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+</UserControl>

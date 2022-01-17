@@ -19,6 +19,31 @@
 
             <Style BasedOn="{StaticResource {x:Type pcb:PcbWindow}}" TargetType="shell:MainWindow" />
 
+            <Color x:Key="FabricationColor">CornflowerBlue</Color>
+            <SolidColorBrush
+                x:Key="FabricationBrush"
+                Color="{StaticResource FabricationColor}" />
+
+            <Color x:Key="AssemblyColor">LawnGreen</Color>
+            <SolidColorBrush
+                x:Key="AssemblyBrush"
+                Color="{StaticResource AssemblyColor}" />
+
+            <Color x:Key="ComponentsColor">Gold</Color>
+            <SolidColorBrush
+                x:Key="ComponentsBrush"
+                Color="{StaticResource ComponentsColor}" />
+
+            <Color x:Key="TimeImpactColor">LightBlue</Color>
+            <SolidColorBrush
+                x:Key="TimeImpactBrush"
+                Color="{StaticResource TimeImpactColor}" />
+
+            <Color x:Key="CostImpactColor">Orange</Color>
+            <SolidColorBrush
+                x:Key="CostImpactBrush"
+                Color="{StaticResource CostImpactColor}" />
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

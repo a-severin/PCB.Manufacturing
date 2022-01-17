@@ -20,8 +20,10 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Base Fabrication",
                 Value = "10 layers",
                 TimeImpact = 1,
+                TimeImpactRate = 1,
                 CostImpact = 1_000,
-                Category = "Fabrication"
+                CostImpactRate = 3,
+                Category = "Fabrication",
             }
         );
         Add(
@@ -30,7 +32,9 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Boards Quantity",
                 Value = "20",
                 TimeImpact = null,
+                TimeImpactRate = 0,
                 CostImpact = 500,
+                CostImpactRate = 1,
                 Category = "Fabrication"
             }
         );
@@ -41,7 +45,9 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Packages",
                 Value = "Package on Packages",
                 TimeImpact = 2,
+                TimeImpactRate = 3,
                 CostImpact = 2_500,
+                CostImpactRate = 2,
                 Category = "Assembly"
             }
         );
@@ -51,7 +57,9 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Processes",
                 Value = "Split Assembly",
                 TimeImpact = null,
+                TimeImpactRate = 0,
                 CostImpact = 720,
+                CostImpactRate = 1,
                 Category = "Assembly"
             }
         );
@@ -62,7 +70,9 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Microchip 20SU",
                 Value = "2",
                 TimeImpact = null,
+                TimeImpactRate = 0,
                 CostImpact = 480,
+                CostImpactRate = 1,
                 Category = "Components"
             }
         );
@@ -72,7 +82,9 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Microchip 18PC",
                 Value = "1",
                 TimeImpact = null,
+                TimeImpactRate = 0,
                 CostImpact = 220,
+                CostImpactRate = 1,
                 Category = "Components"
             }
         );
@@ -91,4 +103,6 @@ public class SummaryPreferencePresenter : BindableBase
     public int? TimeImpact { get; set; }
     public decimal CostImpact { get; set; }
     public string Category { get; set; }
+    public int TimeImpactRate { get; set; }
+    public int CostImpactRate { get; set; }
 }

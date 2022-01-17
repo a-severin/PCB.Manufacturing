@@ -13,6 +13,7 @@
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/ExtraTimeLabelStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/SelectorButtonsStyle.xaml" />
         <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/SelectorButtonStyle.xaml" />
+        <ResourceDictionary Source="/PCB.Manufacturing.CustomControls;component/Themes/Styles/ImpactRateStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
