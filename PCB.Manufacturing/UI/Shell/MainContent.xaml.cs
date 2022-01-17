@@ -24,5 +24,20 @@ namespace PCB.Manufacturing.UI.Shell
         {
             InitializeComponent();
         }
+
+        private void Expander_OnExpanded(object sender, RoutedEventArgs e)
+        {
+            var element = (UIElement)sender;
+            var index = Grid.Children.IndexOf(element);
+            Grid.RowDefinitions[index]
+                .Height = new GridLength(1, GridUnitType.Star);
+        }
+
+        private void Expander_OnCollapsed(object sender, RoutedEventArgs e)
+        {
+            var element = (UIElement)sender;
+            var index = Grid.Children.IndexOf(element);
+            Grid.RowDefinitions[index].Height = GridLength.Auto;
+        }
     }
 }

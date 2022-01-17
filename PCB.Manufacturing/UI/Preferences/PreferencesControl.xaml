@@ -10,37 +10,43 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <StackPanel Orientation="Vertical">
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Hidden"
+        VerticalScrollBarVisibility="Auto">
+        <StackPanel
+            Orientation="Vertical"
+            ScrollViewer.VerticalScrollBarVisibility="Auto">
 
-        <pcb:PcbGroupBox>
-            <pcb:PcbGroupBox.SubHeader>
-                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </pcb:PcbGroupBox.SubHeader>
-            <pcb:PcbGroupBox.Header>
-                <pcb:PcbHeader Text="Project Basics" />
-            </pcb:PcbGroupBox.Header>
-            <preferences:ProjectBasicsControl />
-        </pcb:PcbGroupBox>
+            <pcb:PcbGroupBox>
+                <pcb:PcbGroupBox.SubHeader>
+                    <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+                </pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbGroupBox.Header>
+                    <pcb:PcbHeader Text="Project Basics" />
+                </pcb:PcbGroupBox.Header>
+                <preferences:ProjectBasicsControl />
+            </pcb:PcbGroupBox>
 
-        <pcb:PcbGroupBox>
-            <pcb:PcbGroupBox.SubHeader>
-                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </pcb:PcbGroupBox.SubHeader>
-            <pcb:PcbGroupBox.Header>
-                <pcb:PcbHeader Text="Important Board Preferences" />
-            </pcb:PcbGroupBox.Header>
-            <preferences:ImportantBoardPreferencesControl />
-        </pcb:PcbGroupBox>
+            <pcb:PcbGroupBox>
+                <pcb:PcbGroupBox.SubHeader>
+                    <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+                </pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbGroupBox.Header>
+                    <pcb:PcbHeader Text="Important Board Preferences" />
+                </pcb:PcbGroupBox.Header>
+                <preferences:ImportantBoardPreferencesControl />
+            </pcb:PcbGroupBox>
 
-        <pcb:PcbGroupBox>
-            <pcb:PcbGroupBox.SubHeader>
-                <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
-            </pcb:PcbGroupBox.SubHeader>
-            <pcb:PcbGroupBox.Header>
-                <pcb:PcbHeader Text="Special Board Preferences" />
-            </pcb:PcbGroupBox.Header>
-            <preferences:SpecialBoardPreferencesControl />
-        </pcb:PcbGroupBox>
+            <pcb:PcbGroupBox>
+                <pcb:PcbGroupBox.SubHeader>
+                    <pcb:PcbSubHeader Text="Preferences on this page supersede design file notes" />
+                </pcb:PcbGroupBox.SubHeader>
+                <pcb:PcbGroupBox.Header>
+                    <pcb:PcbHeader Text="Special Board Preferences" />
+                </pcb:PcbGroupBox.Header>
+                <preferences:SpecialBoardPreferencesControl />
+            </pcb:PcbGroupBox>
 
-    </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
