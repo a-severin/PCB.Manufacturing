@@ -76,7 +76,9 @@ namespace PCB.Manufacturing.CustomControls
             CultureInfo culture
         )
         {
-            if (value is int rate && parameter is string parameterString && int.TryParse(parameterString, out var dotNumber))
+            if (value is int rate
+                && parameter is string parameterString
+                && int.TryParse(parameterString, out var dotNumber))
             {
                 return dotNumber <= rate ? 1.0 : 0.1;
             }
@@ -94,5 +96,4 @@ namespace PCB.Manufacturing.CustomControls
             throw new NotImplementedException();
         }
     }
-
 }

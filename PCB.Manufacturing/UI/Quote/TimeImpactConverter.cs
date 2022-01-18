@@ -5,28 +5,8 @@ using System.Windows.Markup;
 
 namespace PCB.Manufacturing.UI.Quote;
 
-public class TimeImpactConverter: MarkupExtension, IValueConverter
+public class TimeImpactConverter : MarkupExtension, IValueConverter
 {
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-        return this;
-    }
-
-    public static string Represent(int? timeImpact)
-    {
-        if (timeImpact == null)
-        {
-            return "-";
-        }
-
-        if (timeImpact == 1)
-        {
-            return "1 day";
-        }
-
-        return $"{timeImpact} days";
-    }
-
     public object Convert(
         object value,
         Type targetType,
@@ -50,5 +30,25 @@ public class TimeImpactConverter: MarkupExtension, IValueConverter
     )
     {
         throw new NotImplementedException();
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
+    }
+
+    public static string Represent(int? timeImpact)
+    {
+        if (timeImpact == null)
+        {
+            return "-";
+        }
+
+        if (timeImpact == 1)
+        {
+            return "1 day";
+        }
+
+        return $"{timeImpact} days";
     }
 }

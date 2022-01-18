@@ -37,18 +37,20 @@ namespace PCB.Manufacturing.CustomControls
             );
         }
 
-        [Bindable(true), Category("Appearance")]
-        public CornerRadius CornerRadius
-        {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
-        }
-
-        [Bindable(true), Category("Appearance")]
+        [Bindable(true)]
+        [Category("Appearance")]
         public Brush? CheckedBackground
         {
             get => (Brush)GetValue(CheckedBackgroundProperty);
             set => SetValue(CheckedBackgroundProperty, value);
+        }
+
+        [Bindable(true)]
+        [Category("Appearance")]
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
     }
 }

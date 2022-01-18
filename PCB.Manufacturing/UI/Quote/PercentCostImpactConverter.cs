@@ -37,7 +37,7 @@ public class PercentCostImpactConverter : MarkupExtension, IValueConverter
                 return string.Empty;
             }
 
-            var percent = (groupSum / total);
+            var percent = groupSum / total;
 
             return percent.ToString("P0");
         }

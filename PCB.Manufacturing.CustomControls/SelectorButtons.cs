@@ -75,7 +75,7 @@ namespace PCB.Manufacturing.CustomControls
                     }
                 );
 
-                var button = new SelectorButton()
+                var button = new SelectorButton
                 {
                     Content = converter.ConvertTo(value, typeof(string)),
                     IsChecked = value?.Equals(DataContext),

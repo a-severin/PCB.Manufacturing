@@ -23,7 +23,7 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 TimeImpactRate = 1,
                 CostImpact = 1_000,
                 CostImpactRate = 3,
-                Category = "Fabrication",
+                Category = "Fabrication"
             }
         );
         Add(
@@ -98,11 +98,11 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
 
 public class SummaryPreferencePresenter : BindableBase
 {
-    public string Parameter { get; set; }
-    public string Value { get; set; }
-    public int? TimeImpact { get; set; }
-    public decimal CostImpact { get; set; }
     public string Category { get; set; }
-    public int TimeImpactRate { get; set; }
+    public decimal CostImpact { get; set; }
     public int CostImpactRate { get; set; }
+    public string Parameter { get; set; }
+    public int? TimeImpact { get; set; }
+    public int TimeImpactRate { get; set; }
+    public string Value { get; set; }
 }

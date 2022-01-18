@@ -5,13 +5,8 @@ using System.Windows.Markup;
 
 namespace PCB.Manufacturing;
 
-public class DebugConverter: MarkupExtension, IValueConverter
+public class DebugConverter : MarkupExtension, IValueConverter
 {
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-        return this;
-    }
-
     public object Convert(
         object value,
         Type targetType,
@@ -30,5 +25,10 @@ public class DebugConverter: MarkupExtension, IValueConverter
     )
     {
         return value;
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
     }
 }
