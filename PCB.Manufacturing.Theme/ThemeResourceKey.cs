@@ -24,5 +24,7 @@ public enum ThemeResourceKey
 
     DataGridHeaderBackground,
     DataGridCellBackground,
-    DataGridGroupingBackground
+    DataGridGroupingBackground,
+
+    ScrollBarThumb
 }

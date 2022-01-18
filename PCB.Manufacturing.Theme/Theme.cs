@@ -113,6 +113,11 @@ namespace PCB.Manufacturing.Theme
                 ThemeResourceKey.DataGridGroupingBackground,
                 new SolidColorBrush(Color.FromRgb(53,53,53))
             );
+
+            _set(
+                ThemeResourceKey.ScrollBarThumb,
+                new SolidColorBrush(Color.FromRgb(135,135,135))
+            );
         }
 
         private static void _set(ThemeResourceKey key, object resource)
