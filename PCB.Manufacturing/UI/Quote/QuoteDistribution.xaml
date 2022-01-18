@@ -39,18 +39,12 @@
                     <ToggleButton
                         x:Name="ShowTimeImpact"
                         IsChecked="True">
-                        <Image
-                            Width="16"
-                            Height="16"
-                            Source="{StaticResource TimeImpactIcon}" />
+                        <Image Source="{StaticResource TimeImpactIcon}" />
                     </ToggleButton>
                     <ToggleButton
                         x:Name="ShowCostImpact"
                         IsChecked="True">
-                        <Image
-                            Width="16"
-                            Height="16"
-                            Source="{StaticResource CostImpactIcon}" />
+                        <Image Source="{StaticResource CostImpactIcon}" />
                     </ToggleButton>
                 </StackPanel>
             </Grid>
