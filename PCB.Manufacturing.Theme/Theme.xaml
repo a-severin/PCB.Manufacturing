@@ -11,6 +11,7 @@
         <ResourceDictionary Source="GridGroupingExpander.xaml" />
         <ResourceDictionary Source="DataGrid.xaml" />
         <ResourceDictionary Source="ScrollBar.xaml" />
+        <ResourceDictionary Source="Expander.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
