@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:PCB.Manufacturing.UI.Preferences"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pcb="http://manufacturing.pcb.com"
+    d:DataContext="{d:DesignInstance Type=local:ProjectBasicsViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -33,7 +34,7 @@
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
-            Text="BC0001" />
+            Text="{Binding Path=ProjectName}" />
 
         <pcb:PreferenceTitle
             Grid.Row="1"
@@ -42,7 +43,7 @@
         <TextBox
             Grid.Row="1"
             Grid.Column="1"
-            Text="92122" />
+            Text="{Binding Path=Zipcode, ValidatesOnDataErrors=True}" />
 
         <pcb:PreferenceTitle
             Grid.Row="2"
@@ -51,7 +52,7 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
-            Text="20" />
+            Text="{Binding Path=BoardsQuantity, ValidatesOnDataErrors=True}" />
 
     </Grid>
 </UserControl>

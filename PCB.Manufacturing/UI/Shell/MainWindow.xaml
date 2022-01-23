@@ -16,6 +16,10 @@
     MinHeight="600"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <pcb:PcbWindow.DataContext>
+        <shell:MainViewModel />
+    </pcb:PcbWindow.DataContext>
+
     <Grid Margin="16">
 
         <Grid.RowDefinitions>

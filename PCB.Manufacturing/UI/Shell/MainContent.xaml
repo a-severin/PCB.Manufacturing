@@ -8,6 +8,7 @@
     xmlns:order="clr-namespace:PCB.Manufacturing.UI.Order"
     xmlns:preferences="clr-namespace:PCB.Manufacturing.UI.Preferences"
     xmlns:quote="clr-namespace:PCB.Manufacturing.UI.Quote"
+    d:DataContext="{d:DesignInstance local:MainViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -26,7 +27,7 @@
             Expanded="Expander_OnExpanded"
             Header="Preferences"
             IsExpanded="False">
-            <preferences:PreferencesControl />
+            <preferences:PreferencesControl DataContext="{Binding Path=OrderPresenter.PreferencesViewModel}" />
         </Expander>
 
         <Expander

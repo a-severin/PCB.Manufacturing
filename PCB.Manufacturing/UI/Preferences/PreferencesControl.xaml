@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pcb="http://manufacturing.pcb.com"
     xmlns:preferences="clr-namespace:PCB.Manufacturing.UI.Preferences"
+    d:DataContext="{d:DesignInstance preferences:PreferencesViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -24,7 +25,7 @@
                 <pcb:PcbGroupBox.Header>
                     <pcb:PcbHeader Text="Project Basics" />
                 </pcb:PcbGroupBox.Header>
-                <preferences:ProjectBasicsControl />
+                <preferences:ProjectBasicsControl DataContext="{Binding Path=ProjectBasicsViewModel}" />
             </pcb:PcbGroupBox>
 
             <pcb:PcbGroupBox>
@@ -34,7 +35,7 @@
                 <pcb:PcbGroupBox.Header>
                     <pcb:PcbHeader Text="Important Board Preferences" />
                 </pcb:PcbGroupBox.Header>
-                <preferences:ImportantBoardPreferencesControl />
+                <preferences:ImportantBoardPreferencesControl DataContext="{Binding Path=ImportantBoardPreferencesViewModel}" />
             </pcb:PcbGroupBox>
 
             <pcb:PcbGroupBox>
@@ -44,7 +45,7 @@
                 <pcb:PcbGroupBox.Header>
                     <pcb:PcbHeader Text="Special Board Preferences" />
                 </pcb:PcbGroupBox.Header>
-                <preferences:SpecialBoardPreferencesControl />
+                <preferences:SpecialBoardPreferencesControl DataContext="{Binding Path=SpecialBoardPreferencesViewModel}" />
             </pcb:PcbGroupBox>
 
         </StackPanel>

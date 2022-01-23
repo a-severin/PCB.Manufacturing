@@ -1,19 +1,31 @@
 ﻿namespace PCB.Manufacturing.Model;
 
+public class Order
+{
+    public Order()
+    {
+        ProjectInfo = new ProjectInfo();
+        BoardInfo = new BoardInfo();
+    }
+
+    public ProjectInfo ProjectInfo;
+    public BoardInfo BoardInfo;
+}
+
 public class ProjectInfo
 {
-    public int BoardsQuantity { get; set; }
-    public LeadFree LeadFree { get; set; }
-    public string ProjectName { get; set; }
-    public string Zipcode { get; set; }
+    public int BoardsQuantity;
+    public LeadFree LeadFree;
+    public string ProjectName;
+    public string Zipcode;
 }
 
 public struct Material
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public int ExtraMoney { get; set; }
-    public int ExtraTime { get; set; }
+    public int Id;
+    public string Name;
+    public int ExtraMoney;
+    public int ExtraTime;
 
     public override bool Equals(object? obj)
     {
@@ -29,10 +41,10 @@ public struct Material
 
 public struct Surface
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public int ExtraMoney { get; set; }
-    public int ExtraTime { get; set; }
+    public int Id;
+    public string Name;
+    public int ExtraMoney;
+    public int ExtraTime;
 
     public override bool Equals(object? obj)
     {
@@ -48,11 +60,11 @@ public struct Surface
 
 public struct SolderMaskColor
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public short R { get; set; }
-    public short G { get; set; }
-    public short B { get; set; }
+    public int Id;
+    public string Name;
+    public short R;
+    public short G;
+    public short B;
 
     public override bool Equals(object? obj)
     {
@@ -68,8 +80,8 @@ public struct SolderMaskColor
 
 public class BoardInfo
 {
-    public double BoardThickness { get; set; }
-    public Material Material { get; set; }
-    public SolderMaskColor SolderMaskColor { get; set; }
-    public Surface Surface { get; set; }
+    public double BoardThickness;
+    public Material Material;
+    public SolderMaskColor SolderMaskColor;
+    public Surface Surface;
 }
