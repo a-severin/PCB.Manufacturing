@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:PCB.Manufacturing.UI.Quote"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pcb="http://manufacturing.pcb.com"
+    d:DataContext="{d:DesignInstance Type=local:QuoteViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -14,9 +15,6 @@
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
-    <UserControl.DataContext>
-        <local:QuoteSummaryTableViewModel />
-    </UserControl.DataContext>
     <ScrollViewer
         HorizontalScrollBarVisibility="Hidden"
         VerticalScrollBarVisibility="Auto">

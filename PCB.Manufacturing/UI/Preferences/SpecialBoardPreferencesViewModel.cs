@@ -1,63 +1,101 @@
-﻿using PCB.Manufacturing.Model;
+﻿using System.Collections.Generic;
+using System.Linq;
+using PCB.Manufacturing.Data;
+using PCB.Manufacturing.Model;
 using Prism.Mvvm;
 
 namespace PCB.Manufacturing.UI.Preferences;
 
 public class SpecialBoardPreferencesViewModel : BindableBase
 {
-    private Impedance _controlledImpedance;
+    private readonly BoardSpec _boardSpec;
 
-    private Flux _fluxType;
+    private readonly Database _database = new();
 
-    private IPC _ipcClass;
+    private SilkscreenColorPresenter _silkscreenColor;
 
-    private ITAR _itar;
+    public SpecialBoardPreferencesViewModel(BoardSpec boardSpec)
+    {
+        _boardSpec = boardSpec;
 
-    private LeadFree _leadFree = LeadFree.No;
+        SilkscreenColors = _database.SilkscreenColors()
+            .Select(_ => new SilkscreenColorPresenter(_))
+            .ToList();
 
-    private Stuckup _stuckup;
-
-    private Tenting _tentingForVias;
+        CooperWeights = _database.CooperWeights();
+    }
 
     public Impedance ControlledImpedance
     {
-        get => _controlledImpedance;
-        set => SetProperty(ref _controlledImpedance, value);
+        get => _boardSpec.ControlledImpedance;
+        set => SetProperty(ref _boardSpec.ControlledImpedance, value);
     }
+
+    public CooperWeight CooperWeightOnInnerLayers
+    {
+        get => _boardSpec.CooperWeightOnInnerLayers;
+        set => SetProperty(ref _boardSpec.CooperWeightOnInnerLayers, value);
+    }
+
+    public CooperWeight CooperWeightOnOuterLayers
+    {
+        get => _boardSpec.CooperWeightOnOuterLayers;
+        set => SetProperty(ref _boardSpec.CooperWeightOnOuterLayers, value);
+    }
+
+    public IEnumerable<CooperWeight> CooperWeights { get; }
 
     public Flux FluxType
     {
-        get => _fluxType;
-        set => SetProperty(ref _fluxType, value);
+        get => _boardSpec.FluxType;
+        set => SetProperty(ref _boardSpec.FluxType, value);
     }
 
     public IPC IpcClass
     {
-        get => _ipcClass;
-        set => SetProperty(ref _ipcClass, value);
+        get => _boardSpec.IpcClass;
+        set => SetProperty(ref _boardSpec.IpcClass, value);
     }
 
     public ITAR Itar
     {
-        get => _itar;
-        set => SetProperty(ref _itar, value);
+        get => _boardSpec.Itar;
+        set => SetProperty(ref _boardSpec.Itar, value);
     }
 
     public LeadFree LeadFree
     {
-        get => _leadFree;
-        set => SetProperty(ref _leadFree, value);
+        get => _boardSpec.LeadFree;
+        set => SetProperty(ref _boardSpec.LeadFree, value);
     }
+
+    public string Notes
+    {
+        get => _boardSpec.Notes;
+        set => SetProperty(ref _boardSpec.Notes, value);
+    }
+
+    public SilkscreenColorPresenter SilkscreenColor
+    {
+        get => _silkscreenColor;
+        set => SetProperty(
+            ref _silkscreenColor,
+            value,
+            () => _boardSpec.SilkscreenColor = value.SilkscreenColor
+        );
+    }
+
+    public IEnumerable<SilkscreenColorPresenter> SilkscreenColors { get; }
 
     public Stuckup Stuckup
     {
-        get => _stuckup;
-        set => SetProperty(ref _stuckup, value);
+        get => _boardSpec.Stuckup;
+        set => SetProperty(ref _boardSpec.Stuckup, value);
     }
 
     public Tenting TentingForVias
     {
-        get => _tentingForVias;
-        set => SetProperty(ref _tentingForVias, value);
+        get => _boardSpec.TentingForVias;
+        set => SetProperty(ref _boardSpec.TentingForVias, value);
     }
 }

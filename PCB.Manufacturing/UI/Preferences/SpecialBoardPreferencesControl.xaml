@@ -6,12 +6,39 @@
     xmlns:local="clr-namespace:PCB.Manufacturing.UI.Preferences"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pcb="http://manufacturing.pcb.com"
+    d:DataContext="{d:DesignInstance Type=local:SpecialBoardPreferencesViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <UserControl.DataContext>
-        <local:SpecialBoardPreferencesViewModel />
-    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type local:SilkscreenColorPresenter}">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="4" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Rectangle
+                    Grid.Column="1"
+                    Width="14"
+                    Height="14"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Fill="{Binding Path=Brush}"
+                    RadiusX="4"
+                    RadiusY="4"
+                    Stroke="Black"
+                    StrokeThickness="1" />
+
+                <TextBlock
+                    Grid.Column="3"
+                    Text="{Binding Path=Text}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Grid.IsSharedSizeScope="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -43,7 +70,7 @@
         <pcb:SelectorButtons
             Grid.Row="0"
             Grid.Column="1"
-            DataContext="{Binding Path=LeadFree}" />
+            DataContext="{Binding Path=LeadFree, Mode=TwoWay}" />
 
         <pcb:PreferenceTitle
             Grid.Row="1"
@@ -52,7 +79,7 @@
         <pcb:SelectorButtons
             Grid.Row="1"
             Grid.Column="1"
-            DataContext="{Binding Path=IpcClass}" />
+            DataContext="{Binding Path=IpcClass, Mode=TwoWay}" />
 
         <pcb:PreferenceTitle
             Grid.Row="2"
@@ -61,7 +88,7 @@
         <pcb:SelectorButtons
             Grid.Row="2"
             Grid.Column="1"
-            DataContext="{Binding Path=Itar}" />
+            DataContext="{Binding Path=Itar, Mode=TwoWay}" />
 
         <pcb:PreferenceTitle
             Grid.Row="3"
@@ -70,7 +97,7 @@
         <pcb:SelectorButtons
             Grid.Row="3"
             Grid.Column="1"
-            DataContext="{Binding Path=FluxType}" />
+            DataContext="{Binding Path=FluxType, Mode=TwoWay}" />
 
         <pcb:PreferenceTitle
             Grid.Row="4"
@@ -78,7 +105,9 @@
             Text="Silkscreen Color" />
         <ComboBox
             Grid.Row="4"
-            Grid.Column="1" />
+            Grid.Column="1"
+            ItemsSource="{Binding Path=SilkscreenColors}"
+            SelectedItem="{Binding Path=SilkscreenColor}" />
 
         <pcb:PreferenceTitle
             Grid.Row="5"
@@ -86,7 +115,9 @@
             Text="Cooper Weight on Inner Layers" />
         <ComboBox
             Grid.Row="5"
-            Grid.Column="1" />
+            Grid.Column="1"
+            ItemsSource="{Binding CooperWeights}"
+            SelectedItem="{Binding Path=CooperWeightOnInnerLayers}" />
 
 
         <pcb:PreferenceTitle
@@ -95,7 +126,9 @@
             Text="Cooper Weight on Outer Layers" />
         <ComboBox
             Grid.Row="6"
-            Grid.Column="1" />
+            Grid.Column="1"
+            ItemsSource="{Binding CooperWeights}"
+            SelectedItem="{Binding Path=CooperWeightOnOuterLayers}" />
 
         <pcb:PreferenceTitle
             Grid.Row="7"
@@ -104,7 +137,7 @@
         <pcb:SelectorButtons
             Grid.Row="7"
             Grid.Column="1"
-            DataContext="{Binding Path=ControlledImpedance}" />
+            DataContext="{Binding Path=ControlledImpedance, Mode=TwoWay}" />
 
 
         <pcb:PreferenceTitle
@@ -114,7 +147,7 @@
         <pcb:SelectorButtons
             Grid.Row="8"
             Grid.Column="1"
-            DataContext="{Binding Path=TentingForVias}" />
+            DataContext="{Binding Path=TentingForVias, Mode=TwoWay}" />
 
 
         <pcb:PreferenceTitle
@@ -124,7 +157,7 @@
         <pcb:SelectorButtons
             Grid.Row="9"
             Grid.Column="1"
-            DataContext="{Binding Path=Stuckup}" />
+            DataContext="{Binding Path=Stuckup, Mode=TwoWay}" />
 
         <pcb:PreferenceTitle
             Grid.Row="10"
@@ -134,6 +167,7 @@
             Grid.Row="10"
             Grid.Column="1"
             Height="50"
+            Text="{Binding Path=Notes}"
             TextWrapping="Wrap"
             VerticalScrollBarVisibility="Auto" />
 

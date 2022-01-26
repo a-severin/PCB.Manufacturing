@@ -4,6 +4,16 @@ namespace PCB.Manufacturing.Data;
 
 public class Database
 {
+    public IEnumerable<CooperWeight> CooperWeights()
+    {
+        return new[]
+        {
+            new CooperWeight(1.0),
+            new CooperWeight(2.0),
+            new CooperWeight(3.0)
+        };
+    }
+
     public IEnumerable<Material> Materials()
     {
         return new[]
@@ -28,6 +38,29 @@ public class Database
                 Name = "Wolfram",
                 ExtraMoney = 560,
                 ExtraTime = 7
+            }
+        };
+    }
+
+    public IEnumerable<SilkscreenColor> SilkscreenColors()
+    {
+        return new[]
+        {
+            new SilkscreenColor
+            {
+                Name = "White",
+                Id = 1,
+                R = 255,
+                G = 255,
+                B = 255
+            },
+            new SilkscreenColor
+            {
+                Name = "Black",
+                Id = 2,
+                R = 0,
+                G = 0,
+                B = 0
             }
         };
     }

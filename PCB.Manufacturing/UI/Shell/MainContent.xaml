@@ -37,7 +37,7 @@
             Expanded="Expander_OnExpanded"
             Header="Quote"
             IsExpanded="False">
-            <quote:QuoteControl />
+            <quote:QuoteControl DataContext="{Binding Path=OrderPresenter.QuoteViewModel}" />
         </Expander>
 
         <Expander

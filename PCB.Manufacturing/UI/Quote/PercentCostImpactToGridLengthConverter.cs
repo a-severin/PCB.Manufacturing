@@ -20,6 +20,7 @@ public class PercentCostImpactToGridLengthConverter : MarkupExtension, IValueCon
     )
     {
         if (value is SummaryPreferenceCollection collection
+            && collection.CollectionView.Groups.Count > GroupIndex
             && collection.CollectionView.Groups[GroupIndex] is CollectionViewGroup collectionViewGroup)
         {
             var total = collection

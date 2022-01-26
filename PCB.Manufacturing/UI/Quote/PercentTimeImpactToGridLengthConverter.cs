@@ -20,16 +20,17 @@ public class PercentTimeImpactToGridLengthConverter : MarkupExtension, IValueCon
     )
     {
         if (value is SummaryPreferenceCollection collection
+            && collection.CollectionView.Groups.Count > GroupIndex
             && collection.CollectionView.Groups[GroupIndex] is CollectionViewGroup collectionViewGroup)
         {
             double total = collection
-                .Select(_ => _.TimeImpact ?? 0)
+                .Select(_ => _.TimeImpact)
                 .Sum();
 
             double groupSum = collectionViewGroup
                 .Items
                 .OfType<SummaryPreferencePresenter>()
-                .Select(_ => _.TimeImpact ?? 0)
+                .Select(_ => _.TimeImpact)
                 .Sum();
 
             if (total == 0

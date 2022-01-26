@@ -16,7 +16,7 @@ public class TimeImpactConverter : MarkupExtension, IValueConverter
     {
         if (value is int timeImpact)
         {
-            Represent(timeImpact);
+            return Represent(timeImpact);
         }
 
         return "-";
@@ -37,9 +37,9 @@ public class TimeImpactConverter : MarkupExtension, IValueConverter
         return this;
     }
 
-    public static string Represent(int? timeImpact)
+    public static string Represent(int timeImpact)
     {
-        if (timeImpact == null)
+        if (timeImpact == 0)
         {
             return "-";
         }

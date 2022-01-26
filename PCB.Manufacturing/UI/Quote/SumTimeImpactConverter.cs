@@ -19,7 +19,7 @@ public class SumTimeImpactConverter : MarkupExtension, IValueConverter
         if (value is IEnumerable collection)
         {
             var sum = collection.OfType<SummaryPreferencePresenter>()
-                .Select(_ => _.TimeImpact ?? 0)
+                .Select(_ => _.TimeImpact)
                 .Sum();
 
             return TimeImpactConverter.Represent(sum);
