@@ -26,7 +26,7 @@
             ExpandDirection="Down"
             Expanded="Expander_OnExpanded"
             Header="Preferences"
-            IsExpanded="False">
+            IsExpanded="True">
             <preferences:PreferencesControl DataContext="{Binding Path=OrderPresenter.PreferencesViewModel}" />
         </Expander>
 
@@ -36,7 +36,7 @@
             ExpandDirection="Down"
             Expanded="Expander_OnExpanded"
             Header="Quote"
-            IsExpanded="True">
+            IsExpanded="False">
             <quote:QuoteControl />
         </Expander>
 

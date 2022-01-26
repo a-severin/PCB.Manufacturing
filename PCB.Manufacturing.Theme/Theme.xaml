@@ -7,11 +7,12 @@
     <ResourceDictionary.MergedDictionaries>
         <t:ThemeResourceDictionary />
         <ResourceDictionary Source="Button.xaml" />
-        <ResourceDictionary Source="TextBox.xaml" />
-        <ResourceDictionary Source="GridGroupingExpander.xaml" />
+        <ResourceDictionary Source="ComboBox.xaml" />
         <ResourceDictionary Source="DataGrid.xaml" />
-        <ResourceDictionary Source="ScrollBar.xaml" />
         <ResourceDictionary Source="Expander.xaml" />
+        <ResourceDictionary Source="GridGroupingExpander.xaml" />
+        <ResourceDictionary Source="ScrollBar.xaml" />
+        <ResourceDictionary Source="TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
@@ -69,13 +70,6 @@
         <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
         <Setter Property="Margin" Value="0,2" />
         <Setter Property="Padding" Value="4" />
-    </Style>
-
-    <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox">
-        <Setter Property="Background" Value="{t:ThemeResource ResourceKey=ComboBoxBackground}" />
-        <Setter Property="BorderBrush" Value="{t:ThemeResource ResourceKey=BorderBrush}" />
-        <Setter Property="BorderThickness" Value="{t:ThemeResource ResourceKey=BorderThickness}" />
-        <Setter Property="Margin" Value="2" />
     </Style>
 
 </ResourceDictionary>

@@ -13,7 +13,7 @@ public class PreferencesViewModel : BindableBase
     public PreferencesViewModel(Model.Order order)
     {
         ProjectBasicsViewModel = new ProjectBasicsViewModel(order.ProjectInfo);
-        ImportantBoardPreferencesViewModel = new ImportantBoardPreferencesViewModel();
+        ImportantBoardPreferencesViewModel = new ImportantBoardPreferencesViewModel(order.BoardInfo);
         SpecialBoardPreferencesViewModel = new SpecialBoardPreferencesViewModel();
     }
 

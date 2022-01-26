@@ -6,9 +6,15 @@
     xmlns:local="clr-namespace:PCB.Manufacturing.UI.Preferences"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pcb="http://manufacturing.pcb.com"
+    d:DataContext="{d:DesignInstance Type=local:ImportantBoardPreferencesViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type local:MaterialPresenter}">
+            <TextBlock Text="{Binding Path=Text}" />
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -33,7 +39,7 @@
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
-            Text="1.57 mm" />
+            Text="{Binding Path=BoardThickness, StringFormat='{}{0:F2} mm'}" />
 
         <pcb:PreferenceTitle
             Grid.Row="1"
@@ -41,11 +47,17 @@
             Text="Material" />
         <ComboBox
             Grid.Row="1"
-            Grid.Column="1" />
+            Grid.Column="1"
+            ItemsSource="{Binding Path=Materials}"
+            SelectedItem="{Binding Path=Material}" />
         <pcb:ExtraMoneyLabel
             Grid.Row="1"
             Grid.Column="2"
-            Text="+$160" />
+            Text="{Binding Path=Material.ExtraMoney}" />
+        <pcb:ExtraTimeLabel
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="{Binding Path=Material.ExtraTime}" />
 
         <pcb:PreferenceTitle
             Grid.Row="2"
