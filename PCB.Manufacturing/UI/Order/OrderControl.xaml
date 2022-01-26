@@ -5,37 +5,82 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PCB.Manufacturing"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shell="clr-namespace:PCB.Manufacturing.UI.Shell"
+    xmlns:theme="clr-namespace:PCB.Manufacturing.Theme;assembly=PCB.Manufacturing.Theme"
+    d:DataContext="{d:DesignInstance Type=shell:MainViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type shell:OrderPresenter}">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="16"
+                    Height="16"
+                    Margin="4"
+                    Source="{StaticResource OrdersIcon}" />
+                <TextBlock
+                    Margin="4"
+                    FontWeight="Bold"
+                    Text="{Binding Path=PreferencesViewModel.ProjectBasicsViewModel.ProjectName}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <ContentControl>
+        <ContentControl.Style>
+            <Style TargetType="ContentControl">
+                <Style.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Path=MadeOrders.Count}"
+                        Value="0">
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image
-            Grid.Row="1"
-            Width="50"
-            Height="50"
-            HorizontalAlignment="Center"
-            Opacity="0.5"
-            Source="{StaticResource OrdersIcon}" />
-        <TextBlock
-            Grid.Row="2"
-            Margin="0,8"
-            HorizontalAlignment="Center"
-            TextAlignment="Center">
-            <Run Text="There are no orders yet." />
-            <LineBreak />
-            <Run Text="Your orders will appear here." />
-        </TextBlock>
-        <Button
-            Grid.Row="3"
-            HorizontalAlignment="Center"
-            Content="Make a Current Order" />
-    </Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Grid.Row="1"
+                                        Width="50"
+                                        Height="50"
+                                        HorizontalAlignment="Center"
+                                        Opacity="0.5"
+                                        Source="{StaticResource OrdersIcon}" />
+                                    <TextBlock
+                                        Grid.Row="2"
+                                        Margin="0,8"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center">
+                                        <Run Text="There are no orders yet." />
+                                        <LineBreak />
+                                        <Run Text="Your orders will appear here." />
+                                    </TextBlock>
+                                    <Button
+                                        Grid.Row="3"
+                                        HorizontalAlignment="Center"
+                                        Command="{Binding Path=AddOrderCommand}"
+                                        Content="Make a Current Order" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <ListBox
+                            Background="{theme:ThemeResource ResourceKey=ContentBackground}"
+                            BorderBrush="{theme:ThemeResource ResourceKey=BorderBrush}"
+                            BorderThickness="{theme:ThemeResource ResourceKey=BorderThickness}"
+                            ItemsSource="{Binding Path=MadeOrders}" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ContentControl.Style>
+    </ContentControl>
+
 </UserControl>

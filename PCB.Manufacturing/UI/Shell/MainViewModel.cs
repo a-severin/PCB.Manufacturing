@@ -1,7 +1,9 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using PCB.Manufacturing.Model;
 using PCB.Manufacturing.UI.Preferences;
 using PCB.Manufacturing.UI.Quote;
+using Prism.Commands;
 using Prism.Mvvm;
 
 namespace PCB.Manufacturing.UI.Shell;
@@ -13,6 +15,22 @@ public class MainViewModel : BindableBase
     public MainViewModel()
     {
         OrderPresenter = new OrderPresenter(new Model.Order());
+
+        AddOrderCommand = new DelegateCommand(
+            () =>
+            {
+                MadeOrders.Add(OrderPresenter);
+                OrderPresenter = new OrderPresenter(new Model.Order());
+            }
+        );
+
+        DiscardToDefaultCommand = new DelegateCommand(
+            () =>
+            {
+                MadeOrders.Clear();
+                OrderPresenter = new OrderPresenter(new Model.Order());
+            }
+        );
     }
 
     public OrderPresenter OrderPresenter
@@ -21,7 +39,11 @@ public class MainViewModel : BindableBase
         set => SetProperty(ref _orderPresenter, value);
     }
 
+    public ObservableCollection<OrderPresenter> MadeOrders { get; } = new();
+
     public ICommand AddOrderCommand { get; set; }
+
+    public ICommand DiscardToDefaultCommand { get; set; }
 }
 
 public sealed class OrderPresenter : BindableBase
