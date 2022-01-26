@@ -31,4 +31,35 @@ public class Database
             }
         };
     }
+
+    public IEnumerable<SolderMaskColor> SolderMaskColors()
+    {
+        return new[]
+        {
+            new SolderMaskColor
+            {
+                Name = "Red",
+                Id = 1,
+                R = 255,
+                G = 0,
+                B = 0
+            },
+            new SolderMaskColor
+            {
+                Name = "Green",
+                Id = 1,
+                R = 0,
+                G = 255,
+                B = 0
+            },
+            new SolderMaskColor
+            {
+                Name = "Blue",
+                Id = 1,
+                R = 0,
+                G = 0,
+                B = 255
+            }
+        };
+    }
 }

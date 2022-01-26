@@ -62,9 +62,9 @@ public struct SolderMaskColor
 {
     public int Id;
     public string Name;
-    public short R;
-    public short G;
-    public short B;
+    public byte R;
+    public byte G;
+    public byte B;
 
     public override bool Equals(object? obj)
     {
