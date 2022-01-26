@@ -47,7 +47,7 @@ public class Database
             new SolderMaskColor
             {
                 Name = "Green",
-                Id = 1,
+                Id = 2,
                 R = 0,
                 G = 255,
                 B = 0
@@ -55,10 +55,38 @@ public class Database
             new SolderMaskColor
             {
                 Name = "Blue",
-                Id = 1,
+                Id = 3,
                 R = 0,
                 G = 0,
                 B = 255
+            }
+        };
+    }
+
+    public IEnumerable<Surface> Surfaces()
+    {
+        return new[]
+        {
+            new Surface
+            {
+                Id = 1,
+                Name = "FACE_1",
+                ExtraMoney = 100,
+                ExtraTime = 1
+            },
+            new Surface
+            {
+                Id = 2,
+                Name = "FACE_2",
+                ExtraMoney = 200,
+                ExtraTime = 2
+            },
+            new Surface
+            {
+                Id = 3,
+                Name = "FACE_3",
+                ExtraMoney = 300,
+                ExtraTime = 3
             }
         };
     }

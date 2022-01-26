@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Media;
 using PCB.Manufacturing.Data;
 using PCB.Manufacturing.Model;
 using Prism.Mvvm;
@@ -17,6 +16,8 @@ public class ImportantBoardPreferencesViewModel : BindableBase
 
     private SolderMaskColorPresenter _solderMaskColor;
 
+    private SurfacePresenter _surface;
+
     public ImportantBoardPreferencesViewModel(BoardInfo boardInfo)
     {
         _boardInfo = boardInfo;
@@ -27,6 +28,10 @@ public class ImportantBoardPreferencesViewModel : BindableBase
 
         SolderMaskColors = _database.SolderMaskColors()
             .Select(_ => new SolderMaskColorPresenter(_))
+            .ToList();
+
+        Surfaces = _database.Surfaces()
+            .Select(_ => new SurfacePresenter(_))
             .ToList();
     }
 
@@ -44,7 +49,7 @@ public class ImportantBoardPreferencesViewModel : BindableBase
             SetProperty(
                 ref _material,
                 value,
-                () => { _boardInfo.Material = value.Material; }
+                () => _boardInfo.Material = value.Material
             );
         }
     }
@@ -57,55 +62,21 @@ public class ImportantBoardPreferencesViewModel : BindableBase
         set => SetProperty(
             ref _solderMaskColor,
             value,
-            () => { _boardInfo.SolderMaskColor = value.SolderMaskColor; }
+            () => _boardInfo.SolderMaskColor = value.SolderMaskColor
         );
     }
 
     public IEnumerable<SolderMaskColorPresenter> SolderMaskColors { get; }
-}
 
-public class MaterialPresenter : BindableBase
-{
-    public readonly Material Material;
-
-    public MaterialPresenter(Material material)
+    public SurfacePresenter Surface
     {
-        Material = material;
-
-        Text = Material.Name;
-        ExtraMoney = Material.ExtraMoney > 0 ? $"+{Material.ExtraMoney:C}" : string.Empty;
-        ExtraTime = Material.ExtraTime == 0 ? string.Empty : $"+{Material.ExtraTime} days";
-    }
-
-    public string ExtraMoney { get; }
-
-    public string ExtraTime { get; }
-
-    public string Text { get; }
-}
-
-public class SolderMaskColorPresenter : BindableBase
-{
-    public readonly SolderMaskColor SolderMaskColor;
-
-    public SolderMaskColorPresenter(SolderMaskColor solderMaskColor)
-    {
-        SolderMaskColor = solderMaskColor;
-
-        Text = solderMaskColor.Name;
-
-        var brush = new SolidColorBrush(
-            Color.FromRgb(
-                solderMaskColor.R,
-                solderMaskColor.G,
-                solderMaskColor.B
-            )
+        get => _surface;
+        set => SetProperty(
+            ref _surface,
+            value,
+            () => _boardInfo.Surface = value.Surface
         );
-        brush.Freeze();
-        Brush = brush;
     }
 
-    public Brush Brush { get; }
-
-    public string Text { get; }
+    public IEnumerable<SurfacePresenter> Surfaces { get; }
 }

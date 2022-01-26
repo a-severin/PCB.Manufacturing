@@ -14,6 +14,9 @@
         <DataTemplate DataType="{x:Type local:MaterialPresenter}">
             <TextBlock Text="{Binding Path=Text}" />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:SurfacePresenter}">
+            <TextBlock Text="{Binding Path=Text}" />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local:SolderMaskColorPresenter}">
             <Grid>
 
@@ -92,15 +95,17 @@
             Text="Surface Finish" />
         <ComboBox
             Grid.Row="2"
-            Grid.Column="1" />
+            Grid.Column="1"
+            ItemsSource="{Binding Path=Surfaces}"
+            SelectedItem="{Binding Path=Surface}" />
         <pcb:ExtraMoneyLabel
             Grid.Row="2"
             Grid.Column="2"
-            Text="+$75" />
+            Text="{Binding Path=Surface.ExtraMoney}" />
         <pcb:ExtraTimeLabel
             Grid.Row="2"
             Grid.Column="3"
-            Text="+ 3 days" />
+            Text="{Binding Path=Surface.ExtraTime}" />
 
         <pcb:PreferenceTitle
             Grid.Row="3"
