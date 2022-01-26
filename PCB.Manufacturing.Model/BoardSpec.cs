@@ -2,16 +2,16 @@
 
 public class BoardSpec
 {
-    public LeadFree LeadFree;
-    public IPC IpcClass;
-    public ITAR Itar;
-    public Flux FluxType;
-    public SilkscreenColor SilkscreenColor;
+    public Impedance ControlledImpedance;
     public CooperWeight CooperWeightOnInnerLayers;
     public CooperWeight CooperWeightOnOuterLayers;
-    public Impedance ControlledImpedance;
-    public Tenting TentingForVias;
-    public Stuckup Stuckup;
+    public Flux FluxType;
+    public IPC IpcClass;
+    public ITAR Itar;
+    public LeadFree LeadFree;
 
     public string Notes;
+    public SilkscreenColor SilkscreenColor;
+    public Stuckup Stuckup;
+    public Tenting TentingForVias;
 }

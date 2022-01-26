@@ -2,6 +2,13 @@
 
 public class ValidatedQuantity
 {
+    public enum QuantityValidationResult
+    {
+        Valid,
+        InvalidNegative,
+        InvalidNumber
+    }
+
     public static readonly Dictionary<QuantityValidationResult, string> ValidationMessages =
         new()
         {
@@ -28,12 +35,5 @@ public class ValidatedQuantity
         }
 
         return QuantityValidationResult.Valid;
-    }
-
-    public enum QuantityValidationResult
-    {
-        Valid,
-        InvalidNegative,
-        InvalidNumber
     }
 }

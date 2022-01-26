@@ -43,6 +43,8 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
         CollectionView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(SummaryPreferencePresenter.Category)));
     }
 
+    public ICollectionView CollectionView { get; set; }
+
     private void _load()
     {
         Clear();
@@ -53,10 +55,10 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
                 Parameter = "Base Fabrication",
                 Value = $"{(_order.BoardSpec.IpcClass == IPC.Class1 ? "10" : "20")} layers",
                 TimeImpact = (_order.BoardSpec.IpcClass == IPC.Class1 ? 1 : 2) + _order.BoardInfo.Material.ExtraTime,
-                TimeImpactRate = (_order.BoardSpec.IpcClass == IPC.Class1 ? 1 : 2),
+                TimeImpactRate = _order.BoardSpec.IpcClass == IPC.Class1 ? 1 : 2,
                 CostImpact = (_order.BoardSpec.IpcClass == IPC.Class1 ? 1_000 : 1_500)
                              + _order.BoardInfo.Material.ExtraMoney,
-                CostImpactRate = (_order.BoardSpec.IpcClass == IPC.Class1 ? 2 : 3),
+                CostImpactRate = _order.BoardSpec.IpcClass == IPC.Class1 ? 2 : 3,
                 Category = "Fabrication"
             }
         );
@@ -135,8 +137,6 @@ public sealed class SummaryPreferenceCollection : ObservableCollection<SummaryPr
             }
         );
     }
-
-    public ICollectionView CollectionView { get; set; }
 }
 
 public class SummaryPreferencePresenter : BindableBase

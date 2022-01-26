@@ -2,6 +2,13 @@
 
 public class ValidatedZipcode
 {
+    public enum ZipcodeValidationResult
+    {
+        Valid,
+        InvalidLength,
+        InvalidChars
+    }
+
     public static readonly Dictionary<ZipcodeValidationResult, string> ValidationMessages =
         new()
         {
@@ -24,12 +31,5 @@ public class ValidatedZipcode
         }
 
         return ZipcodeValidationResult.Valid;
-    }
-
-    public enum ZipcodeValidationResult
-    {
-        Valid,
-        InvalidLength,
-        InvalidChars
     }
 }

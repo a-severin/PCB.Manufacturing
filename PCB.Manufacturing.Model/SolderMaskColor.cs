@@ -51,10 +51,12 @@ public struct CooperWeight
 
     public override bool Equals(object? obj)
     {
-        if (obj is CooperWeight cooperWeight && Value == cooperWeight.Value)
+        if (obj is CooperWeight cooperWeight
+            && Value == cooperWeight.Value)
         {
             return true;
         }
+
         return false;
     }
 
